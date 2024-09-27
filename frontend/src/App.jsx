@@ -6,16 +6,23 @@ import Choosevehical from './pages/thiru/vehical/Choosevehical'
 import Fule from './pages/thiru/vehical/Fule'
 import Noofvehicel from './pages/thiru/vehical/Noofvehicel'
 import Karmapro from './components/Selvapraveen/Karmapro'
+
+import Appliances from './pages/shankari/Appliances'
+import Electricity from './pages/shankari/Electricity'
+import Preferences from './pages/shankari/Preferences'
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
         <BrowserRouter>
        <Routes>
 
-        <Route path="/vehical/*" element={<Vehical/>} />
+          <Route path="/vehical/*" element={<Vehical/>} />
           <Route path="/selva/*" element={<Karmapro />} />
+          <Route path="/preferences" element={<Preferences />} />
+          <Route path='/electricity' element={<Electricity />}/>
+          <Route path ='/appliances' element={<Appliances />}/>
        </Routes>
      </BrowserRouter>
     </>
