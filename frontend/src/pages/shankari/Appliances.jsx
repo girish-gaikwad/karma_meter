@@ -12,15 +12,7 @@ const Appliances = () => {
   const navigate = useNavigate();
   const [selectedIndex, setSelectedIndex] = useState(null);
 
-  const preferences = [
-    { name: "Veg", img: veg, bg: "rgb(228,255,238)", border: "2px solid rgb(114,178,80)" },
-    { name: "Both", img: both, bg: "rgb(255,244,230)", border: "2px solid rgb(235,178,112)" },
-    { name: "Non veg", img: nonveg, bg: "rgb(255,244,243)", border: "2px solid rgb(247,210,206)" },
-  ];
-
-  const handlePreferenceClick = (index) => {
-    setSelectedIndex(index); 
-  };
+ 
 
   return (
     <div style={{ height: '100vh', width: '412px', position: 'relative' }}>

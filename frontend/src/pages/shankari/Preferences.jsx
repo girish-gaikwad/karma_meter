@@ -4,7 +4,7 @@ import veg from '../../assets/shankari/veg.png';
 import nonveg from '../../assets/shankari/nonveg.png';
 import both from '../../assets/shankari/both.png';
 import { useNavigate } from 'react-router-dom';
-import progress2 from '../assets/progress2.png';
+import progress2 from '../../assets/shankari/progress2.png';
 import { IoTriangleSharp } from "react-icons/io5";
 
 const Preferences = () => {
