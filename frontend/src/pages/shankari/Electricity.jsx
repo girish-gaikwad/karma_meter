@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import bg2 from '../assets/bg2.png';
+import bg2 from '../../assets/shankari/bg2.png'
 import { useNavigate } from 'react-router-dom';
-import progress3 from '../assets/progress3.png';
+import progress3 from '../../assets/shankari/progress3.png';
 import { IoTriangleSharp } from "react-icons/io5";
 
 const Electricity = () => {

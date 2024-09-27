@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { Routes, Route ,BrowserRouter} from 'react-router-dom'
 
-import Preferences from './pages/Preferences'
-import Electricity from './pages/Electricity'
-import Appliances from './pages/Appliances'
+import Appliances from './pages/shankari/Appliances'
+import Electricity from './pages/shankari/Electricity'
+import Preferences from './pages/shankari/Preferences'
 
 function App() {
 

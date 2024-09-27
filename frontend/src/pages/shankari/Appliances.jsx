@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import bg3 from '../assets/bg3.png';
-import veg from '../assets/veg.png';
-import nonveg from '../assets/nonveg.png';
-import both from '../assets/both.png';
+import bg3 from '../../assets/shankari/bg3.png';
+import nonveg from '../../assets/shankari/nonveg.png';
+import both from '../../assets/shankari/both.png';
 import { useNavigate } from 'react-router-dom';
 import { IoTriangleSharp } from "react-icons/io5";
-import progress4 from '../assets/progress4.png';
+import progress4 from '../../assets/shankari/progress4.png';
 
 
 
