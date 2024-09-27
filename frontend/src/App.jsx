@@ -1,5 +1,16 @@
 import { useState } from 'react'
-import { Routes, Route ,BrowserRouter} from 'react-router-dom'
+import './App.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+import Slide2 from './pages/mukesh/slide2.jsx'
+import Slide1 from './pages/mukesh/slide1.jsx'
+
+
+import Vehical from './pages/thiru/Vehical'
+import Choosevehical from './pages/thiru/vehical/Choosevehical'
+import Fule from './pages/thiru/vehical/Fule'
+import Noofvehicel from './pages/thiru/vehical/Noofvehicel'
+import Karmapro from './components/Selvapraveen/Karmapro'
 
 import Appliances from './pages/shankari/Appliances'
 import Electricity from './pages/shankari/Electricity'
@@ -10,15 +21,21 @@ function App() {
 
   return (
     <>
-    
-    <BrowserRouter>
-    <Routes>
-      <Route path="/preferences" element={<Preferences />} />
-      <Route path='/electricity' element={<Electricity />}/>
-      <Route path ='/appliances' element={<Appliances />}/>
+        <BrowserRouter>
+       <Routes>
 
-    </Routes>
-    </BrowserRouter>
+         <Route path="/" element={<Slide1 />} />
+         <Route path="/display-karma" element={<Slide2 />} />
+
+
+          <Route path="/vehical/*" element={<Vehical/>} />
+          <Route path="/selva/*" element={<Karmapro />} />
+          <Route path="/preferences" element={<Preferences />} />
+          <Route path='/electricity' element={<Electricity />}/>
+          <Route path ='/appliances' element={<Appliances />}/>
+
+       </Routes>
+     </BrowserRouter>
     </>
   )
 }
