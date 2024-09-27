@@ -4,7 +4,9 @@ import bg1m from "../../assets/m-bg1.svg";
 import r1 from "../../assets/m-row1.png";
 import r2 from "../../assets/m-row2.png";
 import r3 from "../../assets/m-row3.png";
+import { useNavigate } from 'react-router-dom'
 function Slide2() {
+  const navigate =useNavigate();
   return (
     <div className="m-main">
       <div className="m-head-text">
@@ -49,7 +51,7 @@ function Slide2() {
         </div>
         <div className="m-actions">
           <button className="m-btn m-btn-2">Later</button>
-          <button className="m-btn m-btn-1">Calculate & offset</button>
+          <button onClick={()=>navigate("/vehical/choose")} className="m-btn m-btn-1">Calculate & offset</button>
         </div>
       </div>
     </div>

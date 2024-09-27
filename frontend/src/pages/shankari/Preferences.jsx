@@ -89,7 +89,7 @@ const Preferences = () => {
           ))}
         </div>
         <div style={{ display: 'flex', justifyContent: 'space-evenly', padding: '1rem', marginTop: '1.5rem' }}>
-          <button style={{ color: 'rgb(112,168,239)', cursor: 'pointer', fontSize: '1rem', fontWeight: '600',width: '10rem', height: '3rem',backgroundColor:"rgb(230,238,250)" ,border:"none",borderRadius:"5px"}}>Back</button>
+          <button style={{ color: 'rgb(112,168,239)', cursor: 'pointer', fontSize: '1rem', fontWeight: '600',width: '10rem', height: '3rem',backgroundColor:"rgb(230,238,250)" ,border:"none",borderRadius:"5px"}} onClick={() => navigate(-1)}>Back</button>
           <button style={{ color: 'white', cursor: 'pointer', fontSize: '1rem', fontWeight: '600',width: '10rem', height: '3rem',backgroundColor:"#1d78ec",border:"none",borderRadius:"5px" }} onClick={() => navigate('/electricity')}>Next</button>
         </div>
       </div>

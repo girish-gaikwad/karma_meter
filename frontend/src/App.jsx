@@ -24,15 +24,13 @@ function App() {
         <BrowserRouter>
        <Routes>
 
-         <Route path="/" element={<Slide1 />} />
-         <Route path="/display-karma" element={<Slide2 />} />
-
-
+         <Route path="/" element={<Slide2 />} />
           <Route path="/vehical/*" element={<Vehical/>} />
-          <Route path="/selva/*" element={<Karmapro />} />
           <Route path="/preferences" element={<Preferences />} />
           <Route path='/electricity' element={<Electricity />}/>
           <Route path ='/appliances' element={<Appliances />}/>
+         <Route path="/display-karma" element={<Slide1 />} />
+          <Route path="/selva/*" element={<Karmapro />} />
 
        </Routes>
      </BrowserRouter>
