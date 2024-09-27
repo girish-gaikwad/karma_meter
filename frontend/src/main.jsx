@@ -7,8 +7,6 @@ import './index.css'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App/>
-   {/* <Slide2/> */}
-   {/* <Slide1/> */}
-   {/* <CarbonFootprintChart/> */}
+  
   </StrictMode>,
 )

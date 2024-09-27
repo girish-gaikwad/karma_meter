@@ -27,8 +27,10 @@ function Slide1() {
 
 
   return (
-    <div className="m-main1">
-      {!hideButton && <div><h3>Summary</h3>
+    <div className="m-outline">
+      {!hideButton && <div className="m-main1"><h2>Summary</h2>
+     
+     
       <div className="m-box1">
       <div className="m-sub-box1">
         <CarbonFootprintChart/>
@@ -44,10 +46,11 @@ function Slide1() {
           </div>
           <button onClick={handleClick} className="offset-button">Calculate & offset</button>
         </div>
-        <div className="m-remain"><span>Remaind me Later</span></div>
+        <div className="m-remain">Remaind me Later</div>
       </div>
-
-      
+<div></div>
+<div></div>
+    
       </div>}
       {showGreatJob && (
         <div className={`slide-up ${hideGreatJob ? "slide-out" : ""}`}>

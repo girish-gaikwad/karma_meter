@@ -1,93 +1,99 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap");
 
 .m-main1 {
-    background-image: url("../../assets/slide1-back.svg");
-    background-repeat: no-repeat;
-    width: 412px;
-    height: 100vh;
-    background-size: 100% 100%;
-    background-color: #D1C1A8;
-    flex-direction: column;
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    
-  }
-.m-box1{
+  background-image: url("../../assets/slide1-back.svg");
+  background-repeat: no-repeat;
+  width: 412px;
+  height: 100vh;
+  background-size: 100% 100%;
+  background-color: #d1c1a8;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.m-box1 {
   border-radius: 10px;
   display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
   width: 370px;
   height: 600px;
-  padding:  20px 10px;
+  padding: 20px 3px;
   background-color: #fdfdfd;
 }
-  .m-sub-box2 ,.m-sub-box1{
-    /* background-color: #F1FEF980; */
-    border-radius: 15px;
-    padding: 20px;
-    text-align: center;
-    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
-    /* max-width: 350px; */
-    /* margin: 20px auto; */
-    position: relative;
-  }
-  .m-sub-box1{
-    border: 1px solid #E6EEFA;
-    background-color: #F6F9FF80;
-    height: 260px;
-    width: 300px;
-  }
-  .m-sub-box2{
-    border: 1px solid #D9ECE0 ;
-    background-color: #F1FEF980;
-    width: 300px;
-    height: 200px;
-    background-repeat: no-repeat;
-    background-image: url("../../assets/m-com-bg2.png");
-  }
-  .tree-icon img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
-  }
-  
-  .offset-text p {
-    font-family: 'Exocon', sans-serif;
-    font-weight: bold;
-    font-size: 16px;
-    margin: 0;
-    color: #333;
-  }
-  
-  .offset-text h2 {
-    font-family: 'Exocon', sans-serif;    font-weight: 600;
-    font-size: 18px;
-    color: #42A87F;
-    margin: 10px 0;
-  }
-  
-  .offset-button {
-    background-color: #1B9863;
-    color: white;
-    font-family: 'Sarabun', sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 20px;
-  }
-  
-  .offset-button:hover {
-    background-color: #218838;
-  }
-  .m-remain span{
-    color: #0E70EB;
-    font-family: 'Sarabun', sans-serif;
-    align-items: center;
-    padding: 10px 0;
-  }
+.m-sub-box2,
+.m-sub-box1 {
+  /* background-color: #F1FEF980; */
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+  /* max-width: 350px; */
+  /* margin: 20px auto; */
+  position: relative;
+}
+.m-sub-box1 {
+  border: 1px solid #e6eefa;
+  background-color: #f6f9ff80;
+  height: 260px;
+  width: 300px;
+}
+.m-sub-box2 {
+  border: 1px solid #d9ece0;
+  background-color: #F1FEF980;
+  width: 300px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("../../assets/m-com-bg2.png");
+}
+.tree-icon img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.offset-text p {
+  font-family: "Exocon", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0;
+  color: #333;
+}
+
+.offset-text h2 {
+  font-family: "Exocon", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: #42a87f;
+  margin: 10px 0;
+}
+
+.offset-button {
+  background-color: #1b9863;
+  color: white;
+  font-family: "Sarabun", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.offset-button:hover {
+  background-color: #218838;
+}
+.m-remain {
+  color: #0e70eb;
+  margin-top: 10px;
+  font-family: "Sarabun", sans-serif;
+  font-weight: bold;
+  /* align-items: center; */
+  /* padding: 10px 0; */
+}
