@@ -115,7 +115,7 @@ const Electricity = () => {
               fontWeight: '600', width: '10rem', height: '3rem', 
               backgroundColor: "rgb(230,238,250)", border: "none", borderRadius: "5px"
             }}
-            onClick={() => navigate('/preferences')}
+            onClick={() => navigate(-1)}
           >
             Back
           </button>

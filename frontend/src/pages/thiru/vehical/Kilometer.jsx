@@ -22,15 +22,15 @@ const Kilometer = () => {
         <div className='tqus'>{qus}</div>
         <div className='tnovehicel'>
             <div style={{background:"#0E70EB",width:"1%",height:"30%",borderRadius:"10px"}}></div>
-            <input type="range" style={{width:"90%",height:"8px",borderRadius:"0px"}} min={0} max={1000} onChange={handleValueChange}/>
+            <input type="range" style={{width:"90%",height:"8px",borderRadius:"0px"}} min={10} max={250} onChange={handleValueChange}/>
              <div style={{background:"#0E70EB",width:"1%",height:"30%",borderRadius:"10px"}}></div>
              </div>
-             <div style={{display:"flex",flexDirection:"row",justifyContent:"space-between",marginLeft:"1rem",marginRight:"1rem",width:"100%"}}><p>100 units</p>
-        <p>1000 units  </p></div>
+             <div style={{display:"flex",flexDirection:"row",justifyContent:"space-between",marginLeft:"1rem",marginRight:"1rem",width:"100%"}}><p>10 km</p>
+        <p>250 km  </p></div>
         <div style={{ textAlign: 'center',borderRadius:"5PX", marginBottom: '1rem', fontWeight: '600', fontSize: '1.2rem',backgroundColor:"rgb(255,244,228)",color:"rgb(255,152,14)",width:"6rem" }}>
-          {value} units
+          {value} km
         </div>
-            <div className='tnextfuel' style={{marginTop:"30%"}}>
+            <div className='tnextfuel' style={{marginTop:"23%"}}>
                 <button onClick={()=>navigate(-1)} className='tbut1'>Back</button>
                 <button onClick={()=>navigate("/preferences")} className='tbut2'>Next</button>
             </div>
