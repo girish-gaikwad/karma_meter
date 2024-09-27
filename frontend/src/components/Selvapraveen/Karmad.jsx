@@ -50,7 +50,7 @@ function Input() {
     if (hasErrors) {
       setErrors(newErrors);
     } else {
-      navigate("tick"); 
+      navigate("/selva/tick"); 
     }
   };
 

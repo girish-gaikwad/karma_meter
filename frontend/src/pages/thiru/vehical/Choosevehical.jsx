@@ -7,6 +7,7 @@ import auto from "../../../assets/thiru/Automobile.png"
 import option1 from "../../../assets/thiru/option1.svg" 
 import { TbTriangleFilled } from "react-icons/tb";
 import { useNavigate } from 'react-router-dom'
+import { IoTriangleSharp } from "react-icons/io5";
 const Choosevehical = () => {
     const navigate =useNavigate();
     const [qus,setQus]=useState("Choose the vehicles you use for commuting?")
@@ -17,7 +18,10 @@ const Choosevehical = () => {
         {Name:"Car",img:auto,baground:"#FFF4F3",border:"#EB7E74"}])
   return (
     <div className='tmain'>
-        <div style={{justifySelf:"initial"}}><TbTriangleFilled /></div>
+        <>
+      <div style={{ position: 'absolute', top: '4vh', fontSize: '1rem', fontWeight: '600', textAlign: 'center', width: '100%' ,display: 'flex', justifyContent: 'center'}}>
+      <IoTriangleSharp  color='red' style={{marginRight: '0.5rem'}}/>
+      <div >17.67 ton CO2</div></div></>
         <div className='tbox'>
             <div className='tround'><img src = {option1} alt="" /></div>
             <div className='tqus'>{qus}</div>

@@ -24,7 +24,7 @@ function Simplebutton() {
 
   return (
     <div>
-      {!hideButton && <button onClick={handleClick}>Next</button>}
+      {!hideButton && <button onClick={handleClick}>Calculate & offset</button>}
 
       {showGreatJob && (
         <div className={`slide-up ${hideGreatJob ? "slide-out" : ""}`}>

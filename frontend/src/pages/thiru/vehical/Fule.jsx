@@ -5,7 +5,7 @@ import fuel from "../../../assets/thiru/Fuel Pump.png"
 import plug from "../../../assets/thiru/icons8-electric-plug.svg"
 import option1 from "../../../assets/thiru/option1.svg" 
 import { useNavigate } from 'react-router-dom'
-
+import { IoTriangleSharp } from "react-icons/io5";
 const Fule = () => {
     const navigate =useNavigate();
     const [qus,setQus]=useState("What type of fuel do you use?")
@@ -16,6 +16,10 @@ const Fule = () => {
   return (
     <div>
         <div className='tmain'>
+        <>
+      <div style={{ position: 'absolute', top: '4vh', fontSize: '1rem', fontWeight: '600', textAlign: 'center', width: '100%' ,display: 'flex', justifyContent: 'center'}}>
+      <IoTriangleSharp  color='red' style={{marginRight: '0.5rem'}}/>
+      <div >17.67 ton CO2</div></div></>
         <div className='tbox'>
             <div className='tround'><img src = {option1} alt="" /></div>
             <div className='tqus'>{qus}</div>
