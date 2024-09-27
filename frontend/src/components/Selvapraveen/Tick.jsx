@@ -13,6 +13,7 @@ function Tick() {
 
   return (
     <div className="S_outline-tick">
+      <div className="Sout">
       <div className="S_in">
         {!isVideoEnded ? (
           <video
@@ -37,6 +38,7 @@ function Tick() {
         )}
 
         <div className="S_Form">Form Submitted successfully</div>
+      </div>
       </div>
     </div>
   );
