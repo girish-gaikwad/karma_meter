@@ -54,7 +54,7 @@ const Electricity = () => {
 
       <div style={{
         backgroundColor: 'white',
-        height: '40vh',
+        height: '50vh',
         width: '100%',
         position: 'absolute',
         top: '46vh',
@@ -107,11 +107,11 @@ const Electricity = () => {
 </div>
 
 
-        <div style={{ display: 'flex', justifyContent: 'space-evenly', padding: '1rem', bottom: '3.6rem', position: 'relative' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-evenly', padding: '1rem', bottom: '3.8rem', position: 'relative' }}>
           <button
             style={{
               color: 'rgb(112,168,239)', cursor: 'pointer', fontSize: '1rem',
-              fontWeight: '600', width: '10rem', height: '3rem', 
+              fontWeight: '500', width: '10.5rem', height: '2.9rem', 
               backgroundColor: "rgb(230,238,250)", border: "none", borderRadius: "5px"
             }}
             onClick={() => navigate('/preferences')}
@@ -121,7 +121,7 @@ const Electricity = () => {
           <button
             style={{
               color: 'white', cursor: 'pointer', fontSize: '1rem',
-              fontWeight: '600', width: '10rem', height: '3rem', 
+              fontWeight: '500', width: '10.5rem', height: '2.9rem', 
               backgroundColor: "#1d78ec", border: "none", borderRadius: "5px"
             }}
             onClick={handleNext}
