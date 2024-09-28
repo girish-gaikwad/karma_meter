@@ -47,7 +47,9 @@ input[type="range"] {
   /* slider thumb */
   input[type="range"]::-moz-range-thumb {
     background-color: #1d78ec;
+
     border: none; /*Removes extra border that FF applies*/
+
     border-radius: 0.5rem;
     height: 1rem;
     width: 1rem;

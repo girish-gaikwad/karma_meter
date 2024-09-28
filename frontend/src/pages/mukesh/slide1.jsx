@@ -1,11 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import "./slide1.css";
 import tree from '../../assets/m-tree.png'
 import CarbonFootprintChart from "../../components/mukesh/donutgraph";
+import Greatjob from "../Selvapraveen/Greatjob";
+import Input from "../Selvapraveen/Karmad";
 function Slide1() {
+
+  const [showGreatJob, setShowGreatJob] = useState(false);
+  const [hideGreatJob, setHideGreatJob] = useState(false);
+  const [showInput, setShowInput] = useState(false);
+  const [hideButton, setHideButton] = useState(false);
+  const [backgroundClass, setBackgroundClass] = useState("m-main1");
+  const [backgroundClass1, setBackgroundClass1] = useState("m-main1-se");
+  const [backgroundClass2, setBackgroundClass2] = useState("m-main1-se");
+
+  const handleClick = () => {
+    setHideButton(true);  
+    setBackgroundClass("secondback");
+    setBackgroundClass1("firsthalf");setBackgroundClass2("secondhalf");
+    setTimeout(() => {
+      setShowGreatJob(true); 
+    }, 1000);
+    setTimeout(() => {
+      setHideGreatJob(true);  
+    }, 3000);
+    setTimeout(() => {
+      setShowGreatJob(false);
+      setShowInput(true);   
+    }, 3500);
+  };
+
+
   return (
-    <div className="m-main1">
-      <h3>Summary</h3>
+    <div className={backgroundClass}>
+      <div className={backgroundClass1}></div>
+      <div className={backgroundClass2}></div>
+      {!hideButton && <div className="m-main1"><h2>Summary</h2>
+     
+     
       <div className="m-box1">
       <div className="m-sub-box1">
         <CarbonFootprintChart/>
@@ -19,10 +51,21 @@ function Slide1() {
             <p>Offset your excess carbon footprint by</p>
             <h2>Planting 15 Saplings</h2>
           </div>
-          <button className="offset-button">Plant now to offset</button>
+          <button onClick={handleClick} className="offset-button">Calculate & offset</button>
         </div>
-        <div className="m-remain"><span>Remaind me Later</span></div>
+        <div className="m-remain">Remaind me Later</div>
       </div>
+<div></div>
+<div></div>
+    
+      </div>}
+      {showGreatJob && (
+        <div className={`slide-up ${hideGreatJob ? "slide-out" : ""}`}>
+          <Greatjob />
+        </div>
+      )}
+
+      {showInput && <div className="slide-up"><Input /></div>}
     </div>
   );
 }

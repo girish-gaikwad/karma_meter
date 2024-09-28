@@ -43,6 +43,7 @@ const Preferences = () => {
           <div style={{ fontWeight: "bold" }}>17.67 ton CO2</div>
         </div>
 
+
         <div style={{ backgroundColor: 'white', height: '40vh', width: '100%', position: 'relative', top: '46vh', borderTopLeftRadius: '40px', borderTopRightRadius: '40px', zIndex: 1, boxShadow: '0 -5px 10px rgba(0, 0, 0, 0.1)' }}>
           <div style={{ alignItems: 'center', justifyContent: 'center', top: '-2.4rem', position: 'relative', display: 'flex', backgroundColor: 'white', width: "5rem", borderRadius: '50%', height: '5rem', margin: '0 auto', marginBottom: "1" }}>
             <img style={{width:"4rem"}} src={progress2} alt="" />
@@ -88,6 +89,7 @@ const Preferences = () => {
               fontWeight: '500', width: '10.5rem', height: '2.9rem', 
               backgroundColor: "#1d78ec", border: "none", borderRadius: "5px"}} onClick={() => navigate('/electricity')}>Next</button>
           </div>
+
         </div>
       </div>
     </div>

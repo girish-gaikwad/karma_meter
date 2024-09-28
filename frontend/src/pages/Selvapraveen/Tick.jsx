@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { TiPrinter } from "react-icons/ti";
 import "./Karma.css";
-import success from "./success.mp4";
-import poster from "./poster.png";
+import success from '../../assets/success.mp4';
+import poster from '../../assets/poster.png';
 
 function Tick() {
   const [isVideoEnded, setIsVideoEnded] = useState(false);
@@ -13,6 +12,7 @@ function Tick() {
 
   return (
     <div className="S_outline-tick">
+      <div className="Sout">
       <div className="S_in">
         {!isVideoEnded ? (
           <video
@@ -37,6 +37,7 @@ function Tick() {
         )}
 
         <div className="S_Form">Form Submitted successfully</div>
+      </div>
       </div>
     </div>
   );

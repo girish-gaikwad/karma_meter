@@ -15,12 +15,14 @@ const Appliances = () => {
   };
 
   // Dynamically generate background for slider
+
   const sliderBackgroundStyle = {
     backgroundColor: `linear-gradient(to right, rgb(29,120,236) ${value / 10}%, #d3d3d3 0%)`
   };
 
   return (
     <div style={{ height: '99vh', width: '412px', position: 'relative' }}>
+
       {/* Background Image */}
       <div style={{
         backgroundImage: `url(${bg3})`,
@@ -35,7 +37,9 @@ const Appliances = () => {
       {/* CO2 Value */}
       <div style={{ position: 'absolute', top: '4vh', fontSize: '1rem', fontWeight: '600',alignItems:"baseline", textAlign: 'center', width: '100%', display: 'flex', justifyContent: 'center' }}>
         <IoTriangleSharp color='red' style={{ marginRight: '0.5rem' }} />
+
         <div style={{fontWeight:"bold"}}>17.67 ton CO2</div>
+
       </div>
 
       {/* Preferences Section */}
@@ -55,11 +59,14 @@ const Appliances = () => {
         </div>
 
         {/* Question */}
+
         <p style={{ textAlign: 'center', fontSize: '1rem', padding: '2rem', fontWeight: '600', margin: '0', wordBreak: 'break-word', bottom: '4rem', position: 'relative' }}>
+
           How much electricity do you consume for a month?
         </p>
       
         {/* Slider with dynamic fill */}
+
         <div style={{ display: 'flex', height: '20px', alignItems: 'center', borderLeft: "4px solid rgb(29,120,236)", borderRight: "4px solid rgb(29,120,236)", width: "80%", marginLeft: "2rem",position:"relative",bottom:"4rem"}}>
           <input
             type='range'
@@ -82,6 +89,8 @@ const Appliances = () => {
         {/* Buttons */}
         <div style={{ display: 'flex', justifyContent: 'space-evenly', padding: '1rem', marginTop: '4.5rem', position: 'relative', bottom: '2rem' }}>
           <button style={{ color: 'white', cursor: 'pointer', fontSize: '1rem', fontWeight: '600', width: '24rem', height: '3rem', backgroundColor: "#1d78ec", border: "none", borderRadius: "5px" }} onClick={() => navigate('/electricity')}>
+
+
             Calculate carbon footprint
           </button>
         </div>
