@@ -29,10 +29,11 @@
 .Sout{
   height: 80%;
   width: 100%;
+  background-size: 100% 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("./Sbacktick.png");
+  background-image: url("../../assets/triangle.png");
   background-repeat: no-repeat;
 }
 

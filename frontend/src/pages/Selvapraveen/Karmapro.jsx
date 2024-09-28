@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-import Simplebutton from "./Simplebutton";
 import Tick from "./Tick";
 
 function Karmapro() {
@@ -8,7 +7,6 @@ function Karmapro() {
         <div className="Smid">
       
         <Routes>
-          <Route path="/*" element={<Simplebutton />} />
           <Route path="/tick" element={<Tick />} />
         </Routes>
       
