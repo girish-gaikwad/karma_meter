@@ -6,9 +6,9 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background-image: url("./Backrod.png");
+    /* background-image: url("./Backrod.png");
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
 }
 
 *{
