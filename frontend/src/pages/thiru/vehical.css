@@ -45,6 +45,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 5%;
 }
 .titems{
     height: 60%;
@@ -53,8 +54,8 @@
     grid-template-columns: repeat(2, 1fr);
 }
 .titem{
-    height: 95%;
-    width: 65%;
+    height: 90%;
+    width: 45%;
     display: flex;
     font-weight: bold;
     flex-direction: column;
@@ -64,6 +65,8 @@
     border-radius: 8px;
     opacity: 1;
 }
+
+
 .titemfuel{
     height: 45%;
     width: 65%;

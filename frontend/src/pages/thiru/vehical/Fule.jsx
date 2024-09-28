@@ -21,17 +21,17 @@ const Fule = () => {
       <IoTriangleSharp  color='red' style={{marginRight: '0.5rem'}}/>
       <div >17.67 ton CO2</div></div></>
         <div className='tbox'>
-            <div className='tround'><img src = {option1} alt="" /></div>
+            <div className='tround'style={{}}><img src = {option1} alt="" /></div>
             <div className='tqus'>{qus}</div>
-            <div className='titems'>
+            <div className='titems' style={{padding:"0"}}>
                 {list.map((item,index)=>(
-                    <div className='titemfuel' onClick={()=>setBorder(index)} key={index} style={{backgroundColor:item.baground,marginLeft:index==0?"25%":index==1?"-20%":"",marginTop:"15%",border:border==index?`2px solid ${item.border}`:""}}>
-                        <img src={item.img} />
+                    <div className='titemfuel' onClick={()=>setBorder(index)} key={index} style={{backgroundColor:item.baground,marginLeft:index==0?"25%":index==1?"-20%":"",marginTop:"15%",border:border==index?`2px solid ${item.border}`:"2px solid transparent", position:"relative",bottom:"2.4rem",wordBreak:"break-word"}}>
+                        <img src={item.img} style={{width:"20px",}} />
                         <div >{item.Name}</div>
                     </div>
                 ))}
             </div>
-            <div className='tnextfuel'>
+            <div className='tnextfuel' style={{position:"relative",bottom:"1rem"}}>
                 <button onClick={()=>navigate(-1)} className='tbut1'>Back</button>
                 <button onClick={()=>navigate("/vehical/kilometer")} className='tbut2'>Next</button>
             </div>

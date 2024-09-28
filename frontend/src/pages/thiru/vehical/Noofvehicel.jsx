@@ -21,21 +21,21 @@ const Noofvehicel = () => {
         <div className='tround'><img src = {option1} alt="" /></div>
         <div className='tqus'>{qus}</div>
         <div className='tnovehicel'>
-        <div style={{background:"#0E70EB",width:"1%",height:"30%",borderRadius:"10px"}}></div>
-            <input type="range" min={2} max={10} style={{width:"90%",height:"8px",borderRadius:"0px"}} onChange={handleValueChange}/>
-             <div style={{background:"#0E70EB",width:"1%",height:"30%",borderRadius:"10px"}}></div>
+        <div style={{background:"#0E70EB",width:"1%",height:"30%",borderRadius:"10px",position:"relative",bottom:"5rem"}}></div>
+            <input type="range" min={2} max={10} style={{width:"90%",height:"8px",borderRadius:"0px",position:"relative",bottom:"5rem"}} onChange={handleValueChange}/>
+             <div style={{background:"#0E70EB",width:"1%",height:"30%",borderRadius:"10px",position:"relative",bottom:"5rem"}}></div>
              </div>
-             <div style={{display:"flex",justifyContent:"space-between",width:"90%",marginBottom:"10%",fontWeight:"bold"}}>
+             <div style={{display:"flex",justifyContent:"space-between",width:"90%",marginBottom:"10%",fontWeight:"bold",position:"relative",bottom:"6.2rem"}}>
                 <div>2</div>
                 <div>4</div>
                 <div>6</div>
                 <div>8</div>
                 <div>10</div>
              </div>
-             <div style={{ textAlign: 'center',borderRadius:"5PX", marginBottom: '1rem', fontWeight: '600', fontSize: '1.2rem',backgroundColor:"rgb(255,244,228)",color:"rgb(255,152,14)",width:"6rem" }}>
+             <div style={{ textAlign: 'center',borderRadius:"5PX", marginBottom: '1rem', fontWeight: '600', fontSize: '1.2rem',backgroundColor:"rgb(255,244,228)",color:"rgb(255,152,14)",width:"6rem",position:"relative",bottom:"6.3rem" }}>
           {value} Vehicles
         </div>
-            <div className='tnextfuel' style={{marginTop:"12%"}}>
+            <div className='tnextfuel' style={{position:"relative",bottom:"1rem"}}>
                 <button onClick={()=>navigate(-1)} className='tbut1'>Back</button>
                 <button onClick={()=>navigate("/vehical/fuel")} className='tbut2'>Next</button>
             </div>
