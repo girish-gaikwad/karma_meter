@@ -13,6 +13,43 @@
   align-items: center;
 }
 
+
+.m-main1-se{
+  display: none;
+}
+
+.secondback{
+  width: 412px;
+  height: 100vh;
+  background-color: #C7EBF9;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.secondhalf{
+  position: absolute;
+   background-image: url("../../assets/Treeee.png"); 
+   background-size: 100% 100%;
+  height: 55%;
+  width: 100%;
+  background-color: #C7EBF9;
+
+  /* background-color: #0e70eb; */
+  bottom:  0;
+}
+
+.firsthalf{
+  background-image: url("../../assets/cloud.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 20%;
+  top: 4%;
+  position: absolute;
+  width: 100%;
+  display: block;
+}
+
 .m-box1 {
   border-radius: 10px;
   display: flex;

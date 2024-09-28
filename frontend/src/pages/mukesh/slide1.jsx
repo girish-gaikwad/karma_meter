@@ -2,17 +2,22 @@ import React, { useState } from "react";
 import "./slide1.css";
 import tree from '../../assets/m-tree.png'
 import CarbonFootprintChart from "../../components/mukesh/donutgraph";
-import Greatjob from "../../components/Selvapraveen/Greatjob";
-import Input from "../../components/Selvapraveen/Karmad";
+import Greatjob from "../Selvapraveen/Greatjob";
+import Input from "../Selvapraveen/Karmad";
 function Slide1() {
 
   const [showGreatJob, setShowGreatJob] = useState(false);
   const [hideGreatJob, setHideGreatJob] = useState(false);
   const [showInput, setShowInput] = useState(false);
   const [hideButton, setHideButton] = useState(false);
+  const [backgroundClass, setBackgroundClass] = useState("m-main1");
+  const [backgroundClass1, setBackgroundClass1] = useState("m-main1-se");
+  const [backgroundClass2, setBackgroundClass2] = useState("m-main1-se");
 
   const handleClick = () => {
     setHideButton(true);  
+    setBackgroundClass("secondback");
+    setBackgroundClass1("firsthalf");setBackgroundClass2("secondhalf");
     setTimeout(() => {
       setShowGreatJob(true); 
     }, 1000);
@@ -27,7 +32,9 @@ function Slide1() {
 
 
   return (
-    <div className="m-outline">
+    <div className={backgroundClass}>
+      <div className={backgroundClass1}></div>
+      <div className={backgroundClass2}></div>
       {!hideButton && <div className="m-main1"><h2>Summary</h2>
      
      
