@@ -18,83 +18,80 @@ const Preferences = () => {
   ];
 
   const handlePreferenceClick = (index) => {
-    setSelectedIndex(index); 
+    setSelectedIndex(index);
   };
 
   return (
-    <div style={{ height: '100vh', width: '412px', position: 'relative' }}>
-      <>
-      <div style={{
-        backgroundImage: `url(${bg1})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        height: '50vh',
-        width: '100%',
-        position: 'absolute',
-      }}>
-      </div>
-      <div style={{ position: 'absolute', top: '4vh', fontSize: '1rem', fontWeight: '600', textAlign: 'center', width: '100%' ,display: 'flex', justifyContent: 'center'}}>
-      <IoTriangleSharp  color='red' style={{marginRight: '0.5rem'}}/>
-      <div >17.67 ton CO2</div></div></>
-     
+    <div className="d-flex align-items-center justify-content-center" style={{ height: '100vh', width: '412pxvw', position: 'relative' }}>
+      {/* Background Image */}
+      <div
+        style={{
+          backgroundImage: url(${bg1}),
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          height: '55vh',
 
-      
-      <div style={{
-        backgroundColor: 'white',
-        height: '40vh',
-        width: '100%',
-        position: 'relative',
-        top: '46vh',
-        borderTopLeftRadius: '40px',
-        borderTopRightRadius: '40px',
-        zIndex: 1,
-        boxShadow: '0 -5px 10px rgba(0, 0, 0, 0.1)'
-      }}>
-         <div style={{ alignItems: 'center',  justifyContent: 'center',top: '-2rem', position: 'relative',display: 'flex',backgroundColor: 'white',width:"5rem",borderRadius: '50%',height: '5rem',margin: '0 auto',marginBottom:"1" }}><img src={progress2} alt="" /></div>
-        
-        <p style={{ textAlign: 'center', fontSize: '1rem', paddingBottom: '0', fontWeight: '600',margin: '0' ,bottom: '1.5rem', position: 'relative'}}>What you normally eat?</p>
+          width: '412px',
+          position: 'absolute',
+        }}
+      ></div>
 
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: "repeat(2, 1fr)",
-          gridTemplateRows: "repeat(2, 1fr)",
-          gap: '1.5rem', 
-          justifyItems: 'center',
-        }}>
-          {preferences.map((item, index) => (
-            <div
-              key={index}
-              onClick={() => handlePreferenceClick(index)}
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                padding: '2rem',
-                bottom: '-0.3rem',
-                position: 'relative',
-                width: '4rem',
-                height : '4rem',
-
-                borderRadius: '7px',
-                margin: index === 0 ? '0 -4.5rem 0 0' : (index === 1 ? '0 0 0 -4.5rem' : '0'),
-                backgroundColor: item.bg,
-                border: selectedIndex === index ? item.border : "none", 
-                cursor: 'pointer',
-                gridColumn: index === 2 ? 'span 2' : 'auto', 
-              }}
-            >
-              <img src={item.img} alt={item.name} style={{ height: '3rem', width: '3rem',paddingLeft:"0.9rem",fontWeight:"bold",paddingRight:"0.9rem", }} />
-              <p style={{ fontSize: '1rem', margin: '0' }}>{item.name}</p>
-            </div>
-          ))}
+      {/* Centered Content */}
+      <div style={{ height: '99vh', width: '412px', position: 'relative', zIndex: 1 }}>
+        <div style={{ position: 'absolute', top: '4vh', fontSize: '1rem', fontWeight: '600', textAlign: 'center', width: '100%', display: 'flex', justifyContent: 'center' }}>
+          <IoTriangleSharp color='red' style={{ marginRight: '0.5rem' }} />
+          <div style={{ fontWeight: "bold" }}>17.67 ton CO2</div>
         </div>
-        <div style={{ display: 'flex', justifyContent: 'space-evenly', padding: '1rem', marginTop: '1.5rem' }}>
-          <button style={{ color: 'rgb(112,168,239)', cursor: 'pointer', fontSize: '1rem', fontWeight: '600',width: '10rem', height: '3rem',backgroundColor:"rgb(230,238,250)" ,border:"none",borderRadius:"5px"}}>Back</button>
-          <button style={{ color: 'white', cursor: 'pointer', fontSize: '1rem', fontWeight: '600',width: '10rem', height: '3rem',backgroundColor:"#1d78ec",border:"none",borderRadius:"5px" }} onClick={() => navigate('/electricity')}>Next</button>
+
+        <div style={{ backgroundColor: 'white', height: '40vh', width: '100%', position: 'relative', top: '46vh', borderTopLeftRadius: '40px', borderTopRightRadius: '40px', zIndex: 1, boxShadow: '0 -5px 10px rgba(0, 0, 0, 0.1)' }}>
+          <div style={{ alignItems: 'center', justifyContent: 'center', top: '-2.4rem', position: 'relative', display: 'flex', backgroundColor: 'white', width: "5rem", borderRadius: '50%', height: '5rem', margin: '0 auto', marginBottom: "1" }}>
+            <img style={{width:"4rem"}} src={progress2} alt="" />
+          </div>
+
+          <p style={{ textAlign: 'center', fontSize: '1rem', paddingBottom: '0', fontWeight: '600', margin: '0', bottom: '2rem', position: 'relative' }}>What you normally eat?</p>
+
+          {/* Preferences Grid */}
+          <div style={{ display: 'grid', gridTemplateColumns: "repeat(2, 1fr)", gridTemplateRows: "repeat(2, 1fr)", gap: '1.1rem', justifyItems: 'center' }}>
+            {preferences.map((item, index) => (
+              <div
+                key={index}
+                onClick={() => handlePreferenceClick(index)}
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  padding: '1rem',
+                  bottom: '0.7rem',
+                  position: 'relative',
+                  width: '4rem',
+                  height: '4rem',
+                  borderRadius: '7px',
+                  margin: index === 0 ? '0 -5.6rem 0 0' : (index === 1 ? '0 0 0 -5.6rem' : '0'),
+                  backgroundColor: item.bg,
+                  border: selectedIndex === index ? item.border : "2px solid transparent",
+                  cursor: 'pointer',
+                  gridColumn: index === 2 ? 'span 2' : 'auto',
+                }}
+              >
+                <img src={item.img} alt={item.name} style={{ height: '1.5rem', width: '1.5rem', paddingLeft: "0.3rem", fontWeight: "bold", paddingRight: "0.3rem",paddingBottom: "0.3rem",paddingTop: "0.3rem" }} />
+                <p style={{ fontSize: '1rem', margin: '0',fontWeight:"600" }}>{item.name}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Buttons */}
+          <div style={{ display: 'flex', justifyContent: 'space-evenly', padding: '1.2rem', bottom:'0.5rem' ,position: 'relative' }}>
+            <button style={{  color: 'rgb(112,168,239)', cursor: 'pointer', fontSize: '1rem',
+              fontWeight: '500', width: '10.5rem', height: '2.9rem', 
+              backgroundColor: "rgb(230,238,250)", border: "none", borderRadius: "5px" }} onClick={() => navigate(-1)}>Back</button>
+            <button style={{    color: 'white', cursor: 'pointer', fontSize: '1rem',
+              fontWeight: '500', width: '10.5rem', height: '2.9rem', 
+              backgroundColor: "#1d78ec", border: "none", borderRadius: "5px"}} onClick={() => navigate('/electricity')}>Next</button>
+          </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Preferences;
