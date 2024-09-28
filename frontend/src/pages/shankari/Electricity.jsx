@@ -35,7 +35,7 @@ const Electricity = () => {
   };
 
   return (
-    <div style={{ height: '100vh', width: '412px', position: 'relative' ,justifyContent: 'center'}}>
+    <div style={{ height: '99vh', width: '412px', position: 'relative' ,justifyContent: 'center'}}>
       <>
         <div style={{
           backgroundImage: `url(${bg2})`,
@@ -48,7 +48,7 @@ const Electricity = () => {
         </div>
         <div style={{ position: 'absolute', top: '4vh', fontSize: '1rem', fontWeight: '600', textAlign: 'center', width: '100%', display: 'flex', justifyContent: 'center' }}>
           <IoTriangleSharp color='red' style={{ marginRight: '0.5rem' }} />
-          <div>17.67 ton CO2</div> 
+          <div style={{fontWeight:"bold"}}>17.67 ton CO2</div> 
         </div>
       </>
 
@@ -65,7 +65,7 @@ const Electricity = () => {
         boxShadow: '0 -5px 10px rgba(0, 0, 0, 0.1)',
       }}>
            <div style={{ alignItems: 'center',  justifyContent: 'center',top: '-2rem', position: 'relative',display: 'flex',backgroundColor: 'white',width:"5rem",borderRadius: '50%',height: '5rem',margin: '0 auto',marginBottom:"1" }}><img src={progress3} alt="" /></div>
-        <p style={{ textAlign: 'center', fontSize: '1rem', padding: '2rem', fontWeight: '600', margin: '0' ,bottom: '3rem', position: 'relative'}}>
+        <p style={{ textAlign: 'center', fontSize: '1rem', padding: '1rem', fontWeight: '600', margin: '0' ,bottom: '3.5rem', position: 'relative'}}>
           Select the appliances you use at your home
         </p>
 
@@ -74,7 +74,7 @@ const Electricity = () => {
   gridTemplateColumns: "repeat(3, 1fr)",
   gap: '1rem',
   justifyContent: 'center',
-  width: '75%', 
+  width: '70%', 
   margin: '0 auto', 
 
 
@@ -89,26 +89,25 @@ const Electricity = () => {
         alignItems: 'center',
         textAlign: 'center',
         position: 'relative',
-        bottom: '3rem',
+        bottom: '3.5rem',
         justifyContent: 'center',
         width: '3.5rem', 
         height: '3rem', 
-        padding: '1rem',
+        padding: '0.5rem',
         borderRadius: '7px',
         backgroundColor: item.bg,
-        border: selectedIndices.includes(index) ? item. 
-        border : "none", 
+        border: selectedIndices.includes(index) ? item.border : "2px solid transparent", 
         cursor: 'pointer',
         gridColumn: (index === 6) ? '2 / span 1' : 'auto',
       }}
     >
-      <p style={{ fontSize: '14px', margin: '0', wordBreak: 'break-word', fontWeight: '500' }}>{item.name}</p>
+      <p style={{ fontSize: '12px', margin: '0', wordBreak: 'break-word', fontWeight: '500' }}>{item.name}</p>
     </div>
   ))}
 </div>
 
 
-        <div style={{ display: 'flex', justifyContent: 'space-evenly', padding: '1rem', bottom: '2rem', position: 'relative' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-evenly', padding: '1rem', bottom: '3.6rem', position: 'relative' }}>
           <button
             style={{
               color: 'rgb(112,168,239)', cursor: 'pointer', fontSize: '1rem',
