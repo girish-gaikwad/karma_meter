@@ -5,26 +5,23 @@ module.exports = {
   async up (queryInterface, Sequelize) {
     await queryInterface.bulkInsert('foodtypeMaster', [
       {
-        foodcategory: 'Vegetables',
+        foodcategory: 'Veg',
         carbonFootprint: 5,
+        image:"../../assets/shankari/veg.png",
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        foodcategory: 'Fruits',
+        foodcategory: 'Both',
         carbonFootprint: 5,
+        image:"../../assets/shankari/both.png",
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        foodcategory: 'Grains',
+        foodcategory: 'Non veg',
         carbonFootprint: 5,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        foodcategory: 'Dairy',
-        carbonFootprint: 5,
+        image:"../../assets/shankari/nonVeg.png",
         createdAt: new Date(),
         updatedAt: new Date()
       }

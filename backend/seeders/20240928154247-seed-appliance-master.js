@@ -6,26 +6,47 @@ module.exports = {
    await queryInterface.bulkInsert('appliancesMaster', [
      {
       id: 1,
-      name: 'Laptop',
+      name: 'fridge',
       carbonFootprint: 5,
       createdAt: new Date(),
       updatedAt: new Date()
      },{
       id: 2,
-      name: 'Mobile',
+      name: 'Ac',
       carbonFootprint: 5,
       createdAt: new Date(),
       updatedAt: new Date()
      },{
       id: 3,
-      name: 'Tablet',
+      name: 'Chimney',
       carbonFootprint: 5,
       createdAt: new Date(),
       updatedAt: new Date()
      },{
       id: 4,
-      name: 'Headphone',
+      name: 'Washing Machine',
       carbonFootprint: 5,
+      createdAt: new Date(),
+      updatedAt: new Date()
+     },
+     {
+      id: 5,
+      name: 'Electric vehicles',
+      carbonFootprint: 10,
+      createdAt: new Date(),
+      updatedAt: new Date()
+     },
+     {
+      id: 6,
+      name: 'Air cooler',
+      carbonFootprint: 10,
+      createdAt: new Date(),
+      updatedAt: new Date()
+     },
+     {
+      id: 7,
+      name: 'Mixer/ Grinder',
+      carbonFootprint: 10,
       createdAt: new Date(),
       updatedAt: new Date()
      }

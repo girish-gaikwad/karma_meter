@@ -5,20 +5,23 @@ module.exports = {
   async up (queryInterface, Sequelize) {
     await queryInterface.bulkInsert('vehicalMaster', [
       {
-        vehicalCategory: 'Car',
+        vehicalCategory: 'Bicycle/Walk',
+        image:"../../../assets/thiru/Bicycle.png",
         carbonFootprint: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        vehicalCategory: 'Truck',
-        carbonFootprint: 5,
+        vehicalCategory: 'Two wheeler',
+        image:"../../../assets/thiru/Motor Scooter@2x.png",
+        carbonFootprint: 50,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        vehicalCategory: 'Bus',
-        carbonFootprint: 5,
+        vehicalCategory: 'car',
+        carbonFootprint: 100,
+        image:"../../../assets/thiru/Automobile.png",
         createdAt: new Date(),
         updatedAt: new Date()
       }

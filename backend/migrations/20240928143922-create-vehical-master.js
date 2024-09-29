@@ -13,6 +13,9 @@ module.exports = {
       vehicalCategory: {
         type: Sequelize.STRING
       },
+      image: {
+        type: Sequelize.STRING
+      },
       carbonFootprint: {
         type:Sequelize.INTEGER,
         allowNull: false

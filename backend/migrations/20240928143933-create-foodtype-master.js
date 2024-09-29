@@ -14,6 +14,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
+      image: {
+        type: Sequelize.STRING
+      },
       carbonFootprint: {
         allowNull: false,
         type: Sequelize.INTEGER
