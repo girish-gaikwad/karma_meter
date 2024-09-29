@@ -9,8 +9,8 @@ import { IoTriangleSharp } from "react-icons/io5";
 
 const Preferences = () => {
   const navigate = useNavigate();
-  const [selectedIndex, setSelectedIndex] = useState(null);
-
+  const [border, setBorder] = useState(null);
+  const [qus, setQus] = useState("What you normally eat?");
   const preferences = [
     { name: "Veg", img: veg, bg: "rgb(228,255,238)", border: "2px solid rgb(114,178,80)" },
     { name: "Both", img: both, bg: "rgb(255,244,230)", border: "2px solid rgb(235,178,112)" },
@@ -22,80 +22,54 @@ const Preferences = () => {
   };
 
   return (
-    <div className="d-flex align-items-center justify-content-center" style={{ height: '99vh', width: '412px', position: 'relative',border:"1px solid black" }}>
-      {/* Background Image */}
-      <div
-        style={{
-
-          backgroundImage:`url(${bg1})`,
-
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          height: '55vh',
-
-          width: '412px',
-          position: 'absolute',
-        }}
-      ></div>
-
-      {/* Centered Content */}
-      <div style={{ height: '99vh', width: '412px', position: 'relative', zIndex: 1 }}>
-        <div style={{ position: 'absolute', top: '4vh', fontSize: '1rem', fontWeight: '600', textAlign: 'center', width: '100%', display: 'flex', justifyContent: 'center' }}>
-          <IoTriangleSharp color='red' style={{ marginRight: '0.5rem' }} />
-          <div style={{ fontWeight: "bold" }}>17.67 ton CO2</div>
+    <div className="tmain">
+      <div className="Shead-red">
+        <span
+          style={{
+            paddingRight: "10px",
+            alignItems: "center",
+            display: "flex",
+          }}
+        >
+          <IoTriangleSharp color="#DF2929"  />
+        </span>
+        <div>17.67 ton CO2</div>
+      </div>
+      <div className="tbox">
+        <div className="tround">
+          <img src={progress2} style={{backgroundColor:'Transparent'}} />
         </div>
-
-
-        <div style={{ backgroundColor: 'white', height: '50vh', width: '100%', position: 'relative', top: '46vh', borderTopLeftRadius: '40px', borderTopRightRadius: '40px', zIndex: 1, boxShadow: '0 -5px 10px rgba(0, 0, 0, 0.1)' }}>
-        <div style={{ alignItems: 'center', justifyContent: 'center', top: '-2rem', position: 'relative', display: 'flex', backgroundColor: 'white', width: "6rem", borderRadius: '50%', height: '6rem', margin: '0 auto', marginBottom: "1" }}>
-          <img src={progress2} alt="" style={{width:"3.8rem"}} />
-        </div>
-
-
-
-          <p style={{ textAlign: 'center', fontSize: '1rem', paddingBottom: '0', fontWeight: '600', margin: '0', bottom: '2rem', position: 'relative' }}>What you normally eat?</p>
-
-          {/* Preferences Grid */}
-          <div style={{ display: 'grid', gridTemplateColumns: "repeat(2, 1fr)", gridTemplateRows: "repeat(2, 1fr)", gap: '1.1rem', justifyItems: 'center' }}>
+        <div className="Sdiv">
+          <div className="tqus">{qus}</div>
+          <div className="titems">
             {preferences.map((item, index) => (
               <div
+                className="titem"
+                onClick={() => setBorder(index)}
                 key={index}
-                onClick={() => handlePreferenceClick(index)}
                 style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  padding: '1rem',
-                  bottom: '-0.5rem',
-                  position: 'relative',
-                  width: '4rem',
-                  height: '4rem',
-                  borderRadius: '7px',
-                  margin: index === 0 ? '0 -5.6rem 0 0' : (index === 1 ? '0 0 0 -5.6rem' : '0'),
                   backgroundColor: item.bg,
-                  border: selectedIndex === index ? item.border : "2px solid transparent",
-                  cursor: 'pointer',
-                  gridColumn: index === 2 ? 'span 2' : 'auto',
+                  gridColumn: index == 2 ? "span 2" : "auto",
+                  width: index == 2 ? "41%" : "",
+                  border:
+                    border == index
+                      ? `${item.border}`
+                      : "2px solid transparent",
                 }}
               >
-                <img src={item.img} alt={item.name} style={{ height: '1.5rem', width: '1.5rem', paddingLeft: "0.3rem", fontWeight: "bold", paddingRight: "0.3rem",paddingBottom: "0.3rem",paddingTop: "0.3rem" }} />
-                <p style={{ fontSize: '1rem', margin: '0',fontWeight:"600" }}>{item.name}</p>
+                <img src={item.img} style={{paddingBottom:'10px'}} />
+                <div>{item.name}</div>
               </div>
             ))}
           </div>
-
-          {/* Buttons */}
-
-          <div style={{ display: 'flex', justifyContent: 'space-evenly', padding: '1.2rem', bottom:'0rem' ,position: 'relative' }}>
-
-            <button style={{  color: 'rgb(112,168,239)', cursor: 'pointer', fontSize: '1rem',
-              fontWeight: '500', width: '10.5rem', height: '2.9rem', 
-              backgroundColor: "rgb(230,238,250)", border: "none", borderRadius: "5px" }} onClick={() => navigate(-1)}>Back</button>
-            <button style={{    color: 'white', cursor: 'pointer', fontSize: '1rem',
-              fontWeight: '500', width: '10.5rem', height: '2.9rem', 
-              backgroundColor: "#1d78ec", border: "none", borderRadius: "5px"}} onClick={() => navigate('/electricity')}>Next</button>
+          <div className="tnext" style={{ justifyContent: "space-between" }}>
+            <button onClick={() => navigate(-1)} className="tbut1">
+              Back
+            </button>
+            <button onClick={() => navigate('/electricity')} className="tbut2">
+              Next
+            </button>
           </div>
-
         </div>
       </div>
     </div>
