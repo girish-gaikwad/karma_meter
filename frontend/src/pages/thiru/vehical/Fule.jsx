@@ -25,7 +25,7 @@ const Fule = () => {
             <div className='tqus'>{qus}</div>
             <div className='titems'>
                 {list.map((item,index)=>(
-                    <div className='titemfuel' onClick={()=>setBorder(index)} key={index} style={{backgroundColor:item.baground,marginLeft:index==0?"25%":index==1?"-20%":"",marginTop:"15%",border:border==index?`2px solid ${item.border}`:""}}>
+                    <div className='titemfuel' onClick={()=>setBorder(index)} key={index} style={{backgroundColor:item.baground,marginLeft:index==0?"25%":index==1?"-20%":"",marginTop:"15%",border:border==index?`2px solid ${item.border}`:"2px solid transparent"}}>
                         <img src={item.img} />
                         <div >{item.Name}</div>
                     </div>

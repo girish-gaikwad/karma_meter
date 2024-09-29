@@ -64,7 +64,10 @@ const Electricity = () => {
         zIndex: 1,
         boxShadow: '0 -5px 10px rgba(0, 0, 0, 0.1)',
       }}>
-           <div style={{ alignItems: 'center',  justifyContent: 'center',top: '-2rem', position: 'relative',display: 'flex',backgroundColor: 'white',width:"5rem",borderRadius: '50%',height: '5rem',margin: '0 auto',marginBottom:"1" }}><img src={progress3} alt="" /></div>
+          <div style={{ alignItems: 'center', justifyContent: 'center', top: '-2rem', position: 'relative', display: 'flex', backgroundColor: 'white', width: "6rem", borderRadius: '50%', height: '6rem', margin: '0 auto', marginBottom: "1" }}>
+          <img src={progress3} alt="" style={{width:"3.8rem"}} />
+        </div>
+
         <p style={{ textAlign: 'center', fontSize: '1rem', padding: '1rem', fontWeight: '600', margin: '0' ,bottom: '3.5rem', position: 'relative'}}>
           Select the appliances you use at your home
         </p>
@@ -91,7 +94,7 @@ const Electricity = () => {
         position: 'relative',
         bottom: '3.5rem',
         justifyContent: 'center',
-        width: '3.5rem', 
+        width: '4.5rem', 
         height: '3rem', 
         padding: '0.5rem',
         borderRadius: '7px',
@@ -107,21 +110,25 @@ const Electricity = () => {
 </div>
 
 
-        <div style={{ display: 'flex', justifyContent: 'space-evenly', padding: '1rem', bottom: '3.6rem', position: 'relative', }}>
+
+        <div style={{ display: 'flex', justifyContent: 'space-evenly', padding: '1rem', bottom: '2.5rem', position: 'relative' }}>
           <button
             style={{
               color: 'rgb(112,168,239)', cursor: 'pointer', fontSize: '1rem',
-              fontWeight: '500', width: '10.5rem', height: '2.9rem', 
+              fontWeight: '600', width: '10.5rem', height: '2.9rem', 
+
               backgroundColor: "rgb(230,238,250)", border: "none", borderRadius: "5px"
             }}
-            onClick={() => navigate('/preferences')}
+            onClick={() => navigate(-1)}
           >
             Back
           </button>
           <button
             style={{
               color: 'white', cursor: 'pointer', fontSize: '1rem',
-              fontWeight: '500', width: '10.5rem', height: '2.9rem', 
+
+              fontWeight: '600', width: '10.5rem', height: '2.9rem', 
+
               backgroundColor: "#1d78ec", border: "none", borderRadius: "5px"
             }}
             onClick={handleNext}

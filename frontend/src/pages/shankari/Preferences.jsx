@@ -26,7 +26,9 @@ const Preferences = () => {
       {/* Background Image */}
       <div
         style={{
+
           backgroundImage:`url(${bg1})`,
+
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           height: '55vh',
@@ -44,10 +46,12 @@ const Preferences = () => {
         </div>
 
 
-        <div style={{ backgroundColor: 'white', height: '50vh', width: '100%', position: 'relative', top: '46vh', borderTopLeftRadius: '40px', borderTopRightRadius: '40px', zIndex: 1 }}>
-          <div style={{ alignItems: 'center', justifyContent: 'center', top: '-2.4rem', position: 'relative', display: 'flex', backgroundColor: 'white', width: "5rem", borderRadius: '50%', height: '5rem', margin: '0 auto', marginBottom: "1" }}>
-            <img  src={progress2} alt="" />
-          </div>
+        <div style={{ backgroundColor: 'white', height: '50vh', width: '100%', position: 'relative', top: '46vh', borderTopLeftRadius: '40px', borderTopRightRadius: '40px', zIndex: 1, boxShadow: '0 -5px 10px rgba(0, 0, 0, 0.1)' }}>
+        <div style={{ alignItems: 'center', justifyContent: 'center', top: '-2rem', position: 'relative', display: 'flex', backgroundColor: 'white', width: "6rem", borderRadius: '50%', height: '6rem', margin: '0 auto', marginBottom: "1" }}>
+          <img src={progress2} alt="" style={{width:"3.8rem"}} />
+        </div>
+
+
 
           <p style={{ textAlign: 'center', fontSize: '1rem', paddingBottom: '0', fontWeight: '600', margin: '0', bottom: '2rem', position: 'relative' }}>What you normally eat?</p>
 
@@ -62,7 +66,7 @@ const Preferences = () => {
                   flexDirection: 'column',
                   alignItems: 'center',
                   padding: '1rem',
-                  bottom: '0.7rem',
+                  bottom: '-0.5rem',
                   position: 'relative',
                   width: '4rem',
                   height: '4rem',
@@ -81,7 +85,9 @@ const Preferences = () => {
           </div>
 
           {/* Buttons */}
-          <div style={{ display: 'flex', justifyContent: 'space-evenly', padding: '1rem', bottom:'0.5rem' ,position: 'relative' }}>
+
+          <div style={{ display: 'flex', justifyContent: 'space-evenly', padding: '1.2rem', bottom:'0rem' ,position: 'relative' }}>
+
             <button style={{  color: 'rgb(112,168,239)', cursor: 'pointer', fontSize: '1rem',
               fontWeight: '500', width: '10.5rem', height: '2.9rem', 
               backgroundColor: "rgb(230,238,250)", border: "none", borderRadius: "5px" }} onClick={() => navigate(-1)}>Back</button>

@@ -45,7 +45,7 @@ const Appliances = () => {
       {/* Preferences Section */}
       <div style={{
         backgroundColor: 'white',
-        height: '40vh',
+        height: '50vh',
         width: '100%',
         position: 'absolute',
         top: '46vh',
@@ -54,8 +54,8 @@ const Appliances = () => {
         zIndex: 1,
         boxShadow: '0 -5px 10px rgba(0, 0, 0, 0.1)'
       }}>
-        <div style={{ alignItems: 'center', justifyContent: 'center', top: '-2rem', position: 'relative', display: 'flex', backgroundColor: 'white', width: "5rem", borderRadius: '50%', height: '5rem', margin: '0 auto', marginBottom: "1" }}>
-          <img src={progress4} alt="" />
+        <div style={{ alignItems: 'center', justifyContent: 'center', top: '-2rem', position: 'relative', display: 'flex', backgroundColor: 'white', width: "6rem", borderRadius: '50%', height: '6rem', margin: '0 auto', marginBottom: "1" }}>
+          <img src={progress4} alt="" style={{width:"3.8rem"}} />
         </div>
 
         {/* Question */}
@@ -87,8 +87,8 @@ const Appliances = () => {
         </div>
 
         {/* Buttons */}
-        <div style={{ display: 'flex', justifyContent: 'space-evenly', padding: '1rem', marginTop: '4.5rem', position: 'relative', bottom: '2rem' }}>
-          <button style={{ color: 'white', cursor: 'pointer', fontSize: '1rem', fontWeight: '600', width: '24rem', height: '3rem', backgroundColor: "#1d78ec", border: "none", borderRadius: "5px" }} onClick={() => navigate('/electricity')}>
+        <div style={{ display: 'flex', justifyContent: 'space-evenly', padding: '1rem', marginTop: '3.3rem', position: 'relative', bottom: '0.1rem' }}>
+          <button style={{ color: 'white', cursor: 'pointer', fontSize: '1rem', fontWeight: '500', width: '24rem', height: '3rem', backgroundColor: "#1d78ec", border: "none", borderRadius: "5px" }} onClick={() => navigate('/display-karma')}>
 
 
             Calculate carbon footprint
