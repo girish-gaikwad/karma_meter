@@ -10,8 +10,8 @@ const Vehical = () => {
     <div >
         <Routes>
             <Route path="/choose" element={<Choosevehical/>}/>
-            <Route path="/fuel" element={<Fule/>}/>
             <Route path="/noofvehicel" element={<Noofvehicel/>}/>
+            <Route path="/fuel" element={<Fule/>}/>
             <Route path="/kilometer" element={<Kilometer/>}/>
         </Routes>
     </div>
