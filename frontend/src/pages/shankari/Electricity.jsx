@@ -35,7 +35,7 @@ const Electricity = () => {
   };
 
   return (
-    <div style={{ height: '99vh', width: '412px', position: 'relative' ,justifyContent: 'center'}}>
+    <div style={{ height: '99vh', width: '412px', position: 'relative' ,justifyContent: 'center',border:"1px solid black"}}>
       <>
         <div style={{
           backgroundImage: `url(${bg2})`,
@@ -107,7 +107,7 @@ const Electricity = () => {
 </div>
 
 
-        <div style={{ display: 'flex', justifyContent: 'space-evenly', padding: '1rem', bottom: '3.8rem', position: 'relative' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-evenly', padding: '1rem', bottom: '3.6rem', position: 'relative', }}>
           <button
             style={{
               color: 'rgb(112,168,239)', cursor: 'pointer', fontSize: '1rem',

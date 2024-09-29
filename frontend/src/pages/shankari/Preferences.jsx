@@ -22,7 +22,7 @@ const Preferences = () => {
   };
 
   return (
-    <div className="d-flex align-items-center justify-content-center" style={{ height: '100vh', width: '412px', position: 'relative' }}>
+    <div className="d-flex align-items-center justify-content-center" style={{ height: '99vh', width: '412px', position: 'relative',border:"1px solid black" }}>
       {/* Background Image */}
       <div
         style={{
