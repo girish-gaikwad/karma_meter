@@ -35,7 +35,7 @@ const Electricity = () => {
   };
 
   return (
-    <div style={{ height: '99vh', width: '412px', position: 'relative' ,justifyContent: 'center'}}>
+    <div style={{ height: '99vh', width: '412px', position: 'relative' ,justifyContent: 'center',border:"1px solid black"}}>
       <>
         <div style={{
           backgroundImage: `url(${bg2})`,
@@ -110,11 +110,13 @@ const Electricity = () => {
 </div>
 
 
+
         <div style={{ display: 'flex', justifyContent: 'space-evenly', padding: '1rem', bottom: '2.5rem', position: 'relative' }}>
           <button
             style={{
               color: 'rgb(112,168,239)', cursor: 'pointer', fontSize: '1rem',
               fontWeight: '600', width: '10.5rem', height: '2.9rem', 
+
               backgroundColor: "rgb(230,238,250)", border: "none", borderRadius: "5px"
             }}
             onClick={() => navigate(-1)}
@@ -124,7 +126,9 @@ const Electricity = () => {
           <button
             style={{
               color: 'white', cursor: 'pointer', fontSize: '1rem',
+
               fontWeight: '600', width: '10.5rem', height: '2.9rem', 
+
               backgroundColor: "#1d78ec", border: "none", borderRadius: "5px"
             }}
             onClick={handleNext}
