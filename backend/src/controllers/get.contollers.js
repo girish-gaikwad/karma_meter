@@ -5,6 +5,8 @@ const getvehical = async (req, res) => {
     try {
         const vehical = await db.vehicalMaster.findAll();
         res.status(200).json(vehical)
+         
+        
     } catch (error) {
         res.status(500).json({ message: error.message,success:false });
     }

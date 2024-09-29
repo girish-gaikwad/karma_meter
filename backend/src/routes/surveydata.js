@@ -4,7 +4,7 @@ const { form } = require('../controllers/surevey.controller')
 const router = express.Router()
 
 
-router.post('/',form)
+router.post('/survey',form)
 
 
 

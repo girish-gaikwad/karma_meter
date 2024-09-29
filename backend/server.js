@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const dotenv = require('dotenv')
+ const dotenv = require('dotenv')
 const { sequelize } = require('./src/config/db')
 const db = require('./models/index')
 const karma = require('./src/routes/karma_meter')
@@ -12,10 +12,13 @@ app.use(express.json())
 app.use("/api/v1/karma_meter",karma)
 app.use("/api/v1/getdata", getdata)
 app.use("/api/v1/surveyData", surveydata)
-
 app.get('/', (req, res) => {
     res.send('Hello World!')
 })
+const SwaggerUi=require('swagger-ui-express')
+const SwaggerDocs=require('./swagger')
+
+app.use('/api-docs',SwaggerUi.serve,SwaggerUi.setup(SwaggerDocs))
 
 app.listen(process.env.PORT,()=>{
     try {
