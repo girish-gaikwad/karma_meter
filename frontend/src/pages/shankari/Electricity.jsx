@@ -76,7 +76,6 @@ const Electricity = () => {
         </span>
         <div>17.67 ton CO2</div>
       </div>
-
       <div className="tbox">
         <div className="tround">
           <img src={progress3} style={{ backgroundColor: "Transparent" }} />
@@ -84,7 +83,6 @@ const Electricity = () => {
 
         <div className="Sdiv">
           <div className="tqus">Select the appliances you use at your home</div>
-
           <div
             style={{
               justifyContent:'center',
