@@ -9,9 +9,6 @@ module.exports = (sequelize, DataTypes) => {
         carbonFootprint: {
             type: DataTypes.INTEGER,
             allowNull: false // Add validation if necessary
-        },
-        image: {
-            type: DataTypes.STRING
         }
     }, {
         tableName: 'appliancesMaster', // Explicitly define the table name

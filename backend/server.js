@@ -9,9 +9,17 @@ const surveydata = require('./src/routes/surveydata')
 dotenv.config()
 
 app.use(express.json())
+
+
+
 app.use("/api/v1/karma_meter",karma)
+
 app.use("/api/v1/getdata", getdata)
+
 app.use("/api/v1/surveyData", surveydata)
+
+
+
 app.get('/', (req, res) => {
     res.send('Hello World!')
 })
