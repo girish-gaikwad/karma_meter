@@ -74,7 +74,7 @@ const Electricity = () => {
             display: "flex",
           }}
         >
-          <IoTriangleSharp color="#DF2929" />
+          <IoTriangleSharp color="red" />
         </span>
         <div>17.67 ton CO2</div>
       </div>
