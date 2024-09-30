@@ -24,8 +24,8 @@
     background-color: white;
     color: orange;
     font-weight: bold;
-    height: 100px;
-    width: 100px;
+    height: 90px;
+    width: 90px;
     border-radius: 50px;
     display: flex;
     align-items: center;
@@ -54,8 +54,8 @@
     grid-template-columns: repeat(2, 1fr);
 }
 .titem{
-    height: 90%;
-    width: 45%;
+    height: 85%;
+    width: 55%;
     display: flex;
     font-weight: bold;
     flex-direction: column;
@@ -64,6 +64,7 @@
     justify-content: center ;
     border-radius: 8px;
     opacity: 1;
+
 }
 
 

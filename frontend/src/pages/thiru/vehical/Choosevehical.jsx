@@ -27,7 +27,7 @@ const Choosevehical = () => {
             <div className='tqus'>{qus}</div>
             <div className='titems'>
                 {list.map((item,index)=>(
-                    <div className='titem' onClick={()=>setBorder(index)} key={index} style={{backgroundColor:item.baground,gridColumn: index==2?"span 2":"auto",marginLeft:index==0?"25%":index==1?"-20%":"",width:index==2?"27%":"",border:border==index?`2px solid ${item.border}`:"2px solid transparent"}}>
+                    <div className='titem' onClick={()=>setBorder(index)} key={index} style={{backgroundColor:item.baground,gridColumn: index==2?"span 2":"auto",marginLeft:index==0?"35%":index==1?"-35%":"",width:index==2?"27%":"",border:border==index?`2px solid ${item.border}`:"2px solid transparent"}}>
                         <img src={item.img} />
                         <div >{item.Name}</div>
                     </div>

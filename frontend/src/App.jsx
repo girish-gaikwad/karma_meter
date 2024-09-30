@@ -10,11 +10,11 @@ import Vehical from './pages/thiru/Vehical'
 import Choosevehical from './pages/thiru/vehical/Choosevehical'
 import Fule from './pages/thiru/vehical/Fule'
 import Noofvehicel from './pages/thiru/vehical/Noofvehicel'
-import Karmapro from './components/Selvapraveen/Karmapro'
 
 import Appliances from './pages/shankari/Appliances'
 import Electricity from './pages/shankari/Electricity'
 import Preferences from './pages/shankari/Preferences'
+import Karmapro from './pages/Selvapraveen/Karmapro.jsx'
 
 function App() {
 

@@ -21,16 +21,18 @@ const Kilometer = () => {
         <div className='tround'><img src = {option1} alt="" /></div>
         <div className='tqus'>{qus}</div>
         <div className='tnovehicel'>
-            <div style={{background:"#0E70EB",width:"1%",height:"30%",borderRadius:"10px",position:"relative",bottom:"4rem"}}></div>
-            <input type="range" style={{width:"90%",height:"8px",borderRadius:"0px",position:"relative",bottom:"4rem"}} min={10} max={250} onChange={handleValueChange}/>
-             <div style={{background:"#0E70EB",width:"1%",height:"30%",borderRadius:"10px",position:"relative",bottom:"4rem"}}></div>
+            <div style={{background:"#0E70EB",width:"1%",height:"30%",borderRadius:"10px"}}></div>
+            <input type="range" value={value} style={{width:"90%",height:"8px",borderRadius:"0px"}} min={0} max={250} onChange={handleValueChange}/>
+             <div style={{background:"#0E70EB",width:"1%",height:"30%",borderRadius:"10px"}}></div>
              </div>
-             <div style={{display:"flex",flexDirection:"row",justifyContent:"space-between",marginLeft:"1rem",marginRight:"1rem",width:"100%",position:"relative",bottom:"5rem"}}><p>10 km</p>
-        <p>250 km  </p></div>
-        <div style={{ textAlign: 'center',borderRadius:"5PX", marginBottom: '1rem', fontWeight: '600', fontSize: '1.2rem',backgroundColor:"rgb(255,244,228)",color:"rgb(255,152,14)",width:"6rem",position:"relative",bottom:"5rem" }}>
-          {value} km
+             <div style={{display:"flex",justifyContent:"space-between",width:"90%",marginBottom:"10%",position:'relative',marginTop:"-5%"}}>
+                <div>10km</div>
+                <div>250km</div>
+             </div>
+        <div style={{ textAlign: 'center',borderRadius:"5PX", marginBottom: '1rem', fontWeight: '600', fontSize: '1.2rem',backgroundColor:"rgb(255,244,228)",color:"rgb(255,152,14)",width:"6rem" }}>
+          {value} units
         </div>
-            <div className='tnextfuel' style={{position:"relative",bottom:"-1.5rem"}}>
+            <div className='tnextfuel' style={{marginTop:"10%"}}>
                 <button onClick={()=>navigate(-1)} className='tbut1'>Back</button>
                 <button onClick={()=>navigate("/preferences")} className='tbut2'>Next</button>
             </div>
