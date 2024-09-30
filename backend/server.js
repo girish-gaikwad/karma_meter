@@ -6,6 +6,8 @@ const db = require('./models/index')
 const karma = require('./src/routes/karma_meter')
 const getdata = require('./src/routes/getdata')
 const surveydata = require('./src/routes/surveydata')
+const cors = require('cors')
+app.use(cors())
 dotenv.config()
 
 app.use(express.json())

@@ -1,29 +1,48 @@
-import React, { useState } from "react";
+import React, { useState,useEffect,useContext } from "react";
 import "../vehical.css";
-import Choose from "../../../components/thiru/Choose";
-import motor from "../../../assets/thiru/Motor Scooter@2x.png";
-import bicycle2 from "../../../assets/thiru/Bicycle.png";
-import auto from "../../../assets/thiru/Automobile.png";
 import option1 from "../../../assets/thiru/option1.svg";
-import { TbTriangleFilled } from "react-icons/tb";
 import { useNavigate } from "react-router-dom";
 import { IoTriangleSharp } from "react-icons/io5";
+import { KarmavehicalContext } from "../../../Karmacontext";
 const Choosevehical = () => {
+  const { vehicalID, setVehicalID } = useContext(KarmavehicalContext);
   const navigate = useNavigate();
+  const [data,setData] = useState(null)
   const [qus, setQus] = useState("Choose the vehicles you use for commuting?");
   const [border, setBorder] = useState(null);
   const [list, setList] = useState([
     {
-      Name: "Bicycle/Walk",
-      img: bicycle2,
       baground: "#EEF6FF",
       border: "lightblue",
     },
-    { Name: "Two wheeler", img: motor, baground: "#FFF4E6", border: "#FFBA63" },
+    { baground: "#FFF4E6", border: "#FFBA63" },
     
-    { Name: "Car", img: auto, baground: "#FFF4F3", border: "#EB7E74" },
+    { baground: "#FFF4F3", border: "#EB7E74" },
   ]);
+  const handleclick = (index,item) =>{
+    setVehicalID(item.id)
+    setBorder(index)
+  }
+console.log(vehicalID);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch('http://localhost:8081/api/v1/getdata/vehicaltype');
+      const data = await response.json();
+      setData(data)
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  useEffect(() => {
+    fetchData();
+  },[])
+  if (!data) {
+    return <div>Loding....</div>
+  }
+
   return (
+
     <div className="tmain">
       <div className="Shead-red">
         <span
@@ -44,23 +63,23 @@ const Choosevehical = () => {
         <div className="Sdiv">
         <div className="tqus">{qus}</div>
         <div className="titems">
-          {list.map((item, index) => (
+          {data.map((item, index) => (
             <div
               className="titem"
-              onClick={() => setBorder(index)}
+              onClick={() => handleclick(index,item)}
               key={index}
               style={{
-                backgroundColor: item.baground,
+                backgroundColor: list[index].baground,
                 gridColumn: index == 2 ? "span 2" : "auto",
                 width: index == 2 ? "41%" : "",
                 border:
                   border == index
-                    ? `2px solid ${item.border}`
+                    ? `2px solid ${list[index].border}`
                     : "2px solid transparent",
               }}
             >
-              <img src={item.img} style={{paddingBottom:'10px'}} />
-              <div>{item.Name}</div>
+              <img src={item.image} style={{paddingBottom:'10px'}} />
+              <div>{item.vehicalCategory}</div>
             </div>
           ))}
         </div>

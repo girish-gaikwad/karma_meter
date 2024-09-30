@@ -1,18 +1,20 @@
-import React, { useState } from "react";
+import React, { useState,useEffect,useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import option1 from "../../../assets/thiru/option1.svg";
-
+import { KarmavehicalContext } from "../../../Karmacontext";
 import Slider from "@mui/material/Slider";
 import { IoTriangleSharp } from "react-icons/io5";
 const Noofvehicel = () => {
   const navigate = useNavigate();
+  const { vehicalCount, setVehicalCount } = useContext(KarmavehicalContext);
   const [qus, setQus] = useState("How many vehicles do you own?");
-  const [value, setValue] = useState(2); // Initial value of the slider is 0
-
-  // Update the value state as slider moves
+  const [value, setValue] = useState(vehicalCount); 
   const handleValueChange = (event) => {
     setValue(event.target.value);
+    setVehicalCount(event.target.value)
   };
+  console.log(vehicalCount);
+  
   return (
     <div className="tmain">
       <div className="Shead-red">
