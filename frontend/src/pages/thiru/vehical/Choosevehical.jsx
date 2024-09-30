@@ -52,13 +52,13 @@ console.log(vehicalID);
             display: "flex",
           }}
         >
-          <IoTriangleSharp color="#DF2929"  />
+          <IoTriangleSharp color="red"  />
         </span>
         <div>17.67 ton CO2</div>
       </div>
       <div className="tbox">
-        <div className="tround">
-          <img src={option1} style={{backgroundColor:'Transparent'}} />
+        <div className="tround" >
+          <img src={option1}  />
         </div>
         <div className="Sdiv">
         <div className="tqus">{qus}</div>

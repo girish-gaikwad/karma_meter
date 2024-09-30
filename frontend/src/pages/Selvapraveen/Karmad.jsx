@@ -59,10 +59,7 @@ function Input() {
       <div className="S_input">
         <div className="Sone">
           <div className="Sone1"> Fill out the form</div>
-          <div className="Sone2">
-            Our team will reach out to you to help with your
-          </div>
-          <div className="Sone2">tree plantation</div>
+          <div className="Sone2">Our team will reach out to you to help with your tree plantation</div>
         </div>
 
         {/* Mapping over formFields array to generate input fields */}

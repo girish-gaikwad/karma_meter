@@ -3,7 +3,9 @@ import "../vehical.css";
 import option1 from "../../../assets/thiru/option1.svg";
 import { useNavigate } from "react-router-dom";
 import { IoTriangleSharp } from "react-icons/io5";
-import { KarmavehicalContext } from "../../../Karmacontext";
+
+import image from "../../../assets/second.png";
+
 const Fule = () => {
   const navigate = useNavigate();
   const { fuelID, setFuelID } = useContext(KarmavehicalContext);
@@ -46,7 +48,7 @@ const Fule = () => {
     return <div>Loding....</div>
   }
   return (
-    <div className="tmain">
+    <div className="tmain" style={{ backgroundImage: `url(${image})`}}>
       <div className="Shead-red">
         <span
             style={{
@@ -55,7 +57,7 @@ const Fule = () => {
               display: "flex",
             }}
           >
-            <IoTriangleSharp color="#DF2929"  />
+            <IoTriangleSharp color="red"  />
           </span>
           <div>17.67 ton CO2</div>
       </div>
