@@ -15,12 +15,13 @@ import Appliances from './pages/shankari/Appliances'
 import Electricity from './pages/shankari/Electricity'
 import Preferences from './pages/shankari/Preferences'
 import Karmapro from './pages/Selvapraveen/Karmapro.jsx'
+import Karmacontext from './Karmacontext.jsx'
 
 function App() {
 
 
   return (
-    <>
+    <Karmacontext>
         <BrowserRouter>
        <Routes>
 
@@ -34,7 +35,7 @@ function App() {
 
        </Routes>
      </BrowserRouter>
-    </>
+     </Karmacontext>
   )
 }
 

@@ -1,30 +1,52 @@
-import React, { useState } from "react";
+import React, { useState,useEffect,useContext } from "react";
 import "../vehical.css";
-import Choose from "../../../components/thiru/Choose";
-import fuel from "../../../assets/thiru/Fuel Pump.png";
-import plug from "../../../assets/thiru/icons8-electric-plug.svg";
 import option1 from "../../../assets/thiru/option1.svg";
 import { useNavigate } from "react-router-dom";
 import { IoTriangleSharp } from "react-icons/io5";
+
 import image from "../../../assets/second.png";
+
 const Fule = () => {
   const navigate = useNavigate();
+  const { fuelID, setFuelID } = useContext(KarmavehicalContext);
+  const [data,setData] = useState(null)
   const [qus, setQus] = useState("What type of fuel do you use?");
   const [border, setBorder] = useState(null);
   const [list, setList] = useState([
     {
-      Name: "Petrol/Diesel",
-      img: fuel,
       baground: "#FFF4F3",
       border: "#EB7E74",
     },
     {
-      Name: "Eletric vehicle",
-      img: plug,
       baground: "#FFF4E6",
       border: "#FFBA63",
     },
   ]);
+
+  const handleclick = (index,item) =>{
+    setFuelID(item.id)
+    setBorder(index)
+  }
+  console.log(fuelID);
+  
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch('http://localhost:8081/api/v1/getdata/fueltype');
+      const data = await response.json();
+      console.log(data);
+      
+      setData(data)
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  useEffect(() => {
+    fetchData();
+  },[])
+  if (!data) {
+    return <div>Loding....</div>
+  }
   return (
     <div className="tmain" style={{ backgroundImage: `url(${image})`}}>
       <div className="Shead-red">
@@ -46,22 +68,22 @@ const Fule = () => {
         <div className="Sdiv">
         <div className="tqus">{qus}</div>
         <div className="titems">
-        {list.map((item, index) => (
+        {data.map((item, index) => (
             <div
               className="titem "
-              onClick={() => setBorder(index)}
+              onClick={() => handleclick(index,item)}
               key={index}
               style={{
-                backgroundColor: item.baground,
+                backgroundColor: list[index].baground,
                 height:'50%',
                 border:
                   border == index
-                    ? `2px solid ${item.border}`
+                    ? `2px solid ${list[index].border}`
                     : "2px solid transparent",
               }}
             >
-              <img src={item.img} style={{paddingBottom:'10px'}} />
-              <div>{item.Name}</div>
+              <img src={item.image} style={{paddingBottom:'10px'}} />
+              <div>{item.fuelcategory}</div>
             </div>
           ))}
         </div>

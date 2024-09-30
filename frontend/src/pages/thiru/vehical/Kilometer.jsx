@@ -1,17 +1,21 @@
-import React,{useState} from 'react'
+import React, { useState,useEffect,useContext } from "react";
 import { useNavigate } from 'react-router-dom'
 import option1 from "../../../assets/thiru/option1.svg" 
 import { IoTriangleSharp } from "react-icons/io5";
 import Slider from "@mui/material/Slider";
+import { KarmavehicalContext } from "../../../Karmacontext";
 const Kilometer = () => {
     const navigate =useNavigate();
+    const { AvgKilometers, setAvgKilometers } = useContext(KarmavehicalContext);
     const [qus,setQus]=useState("How many kilometers you drive per week?")
-    const [value, setValue] = useState(0); // Initial value of the slider is 0
-
+    const [value, setValue] = useState(AvgKilometers); // Initial value of the slider is 0
   // Update the value state as slider moves
   const handleValueChange = (event) => {
     setValue(event.target.value);
+    setAvgKilometers(event.target.value)
   };
+  console.log(AvgKilometers);
+  
   return (
     <div className="tmain1">
       <div className="Shead-red">

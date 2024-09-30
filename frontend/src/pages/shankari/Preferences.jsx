@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import bg1 from '../../assets/shankari/bg1.png';
 import veg from '../../assets/shankari/veg.png';
-import nonveg from '../../assets/shankari/nonveg.png';
+import nonveg from '../../assets/shankari/nonVeg.png';
 import both from '../../assets/shankari/both.png';
 import { useNavigate } from 'react-router-dom';
 import { IoTriangleSharp } from "react-icons/io5";

@@ -14,7 +14,6 @@ const Appliances = () => {
     setValue(event.target.value);
   };
 
-
   const sliderBackgroundStyle = {
     backgroundColor: `linear-gradient(to right, rgb(29,120,236) ${value / 10}%, #d3d3d3 0%)`
   };
