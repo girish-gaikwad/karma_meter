@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import bg3 from '../../assets/shankari/bg3.png';
 import { useNavigate } from 'react-router-dom';
 import { IoTriangleSharp } from "react-icons/io5";
-import progress4 from '../../assets/shankari/progress4.png';
+import progress4 from '../../assets/level4.png';
 import './Appliances.css';
 import Slider from "@mui/material/Slider";
+import thirdImage from '../../assets/fiveth.png';
 const Appliances = () => {
   const navigate = useNavigate();
   const [value, setValue] = useState(100);
@@ -19,7 +20,7 @@ const Appliances = () => {
   };
 
   return (
-    <div className="tmain">
+    <div className="tmain" style={{ backgroundImage: `url(${thirdImage})`}}>
       <div className="Shead-red">
       <IoTriangleSharp
           color="red"

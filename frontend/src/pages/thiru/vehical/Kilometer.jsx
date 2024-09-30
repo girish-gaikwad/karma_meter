@@ -13,7 +13,7 @@ const Kilometer = () => {
     setValue(event.target.value);
   };
   return (
-    <div className="tmain">
+    <div className="tmain1">
       <div className="Shead-red">
       <IoTriangleSharp
           color="red"

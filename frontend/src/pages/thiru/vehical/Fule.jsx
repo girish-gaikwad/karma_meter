@@ -6,6 +6,7 @@ import plug from "../../../assets/thiru/icons8-electric-plug.svg";
 import option1 from "../../../assets/thiru/option1.svg";
 import { useNavigate } from "react-router-dom";
 import { IoTriangleSharp } from "react-icons/io5";
+import image from "../../../assets/second.png";
 const Fule = () => {
   const navigate = useNavigate();
   const [qus, setQus] = useState("What type of fuel do you use?");
@@ -25,7 +26,7 @@ const Fule = () => {
     },
   ]);
   return (
-    <div className="tmain">
+    <div className="tmain" style={{ backgroundImage: `url(${image})`}}>
       <div className="Shead-red">
         <span
             style={{

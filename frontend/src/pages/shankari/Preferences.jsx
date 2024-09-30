@@ -4,8 +4,9 @@ import veg from '../../assets/shankari/veg.png';
 import nonveg from '../../assets/shankari/nonveg.png';
 import both from '../../assets/shankari/both.png';
 import { useNavigate } from 'react-router-dom';
-import progress2 from '../../assets/shankari/progress2.png';
 import { IoTriangleSharp } from "react-icons/io5";
+import thirdImage from '../../assets/third.png';
+import level from '../../assets/level2.png';
 
 const Preferences = () => {
   const navigate = useNavigate();
@@ -22,7 +23,7 @@ const Preferences = () => {
   };
 
   return (
-    <div className="tmain">
+    <div className="tmain" style={{ backgroundImage: `url(${thirdImage})`}}>
       <div className="Shead-red">
         <span
           style={{
@@ -37,7 +38,7 @@ const Preferences = () => {
       </div>
       <div className="tbox">
         <div className="tround">
-          <img src={progress2} style={{backgroundColor:'Transparent'}} />
+          <img src={level} style={{backgroundColor:'Transparent'}} />
         </div>
         <div className="Sdiv">
           <div className="tqus">{qus}</div>

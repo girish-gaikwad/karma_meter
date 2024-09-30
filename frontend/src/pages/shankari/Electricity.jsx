@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import bg2 from "../../assets/shankari/bg2.png";
 import { useNavigate } from "react-router-dom";
-import progress3 from "../../assets/shankari/progress3.png";
+import progress3 from "../../assets/level3.png";
 import { IoTriangleSharp } from "react-icons/io5";
+import thirdImage from '../../assets/fourth.png';
+
 
 const Electricity = () => {
   const navigate = useNavigate();
@@ -63,7 +65,7 @@ const Electricity = () => {
   };
 
   return (
-    <div className="tmain">
+    <div className="tmain" style={{ backgroundImage: `url(${thirdImage})`}}>
       <div className="Shead-red">
         <span
           style={{

@@ -50,7 +50,7 @@ function Slide2() {
           </div>
         </div>
         <div className="m-actions">
-          <button className="m-btn m-btn-2">Later</button>
+          <button className="m-btn m-btn-2" style={{color:'#0E70EB',fontWeight:'600'}}>Later</button>
           <button onClick={()=>navigate("/vehical/choose")} className="m-btn m-btn-1">Calculate & offset</button>
         </div>
       </div>
