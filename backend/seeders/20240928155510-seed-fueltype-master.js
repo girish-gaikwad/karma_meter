@@ -7,14 +7,14 @@ module.exports = {
       {
         fuelcategory: 'Petrol',
         carbonFootprint: 50,
-        image:"../../../assets/thiru/Fuel Pump.png",
+        image:"/public/thiru/Fuel Pump.png",
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         fuelcategory: 'Electric',
         carbonFootprint: 25,
-        image:"../../../assets/thiru/icons8-electric-plug.svg",
+        image:"/public/thiru/icons8-electric-plug.svg",
         createdAt: new Date(),
         updatedAt: new Date()
       }
