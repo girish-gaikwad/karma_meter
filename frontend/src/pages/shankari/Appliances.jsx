@@ -9,7 +9,7 @@ import { KarmavehicalContext } from "../../Karmacontext";
 
 const Appliances = () => {
   const navigate = useNavigate();
-  const { electricityUnit, setElectricityUnit } = useContext(KarmavehicalContext);
+  const { electricityUnit, setElectricityUnit,ClientSideCo2,SetClientSideCo2 } = useContext(KarmavehicalContext);
   const [value, setValue] = useState(100);
   const [qus, setQus] = useState("How much electricity do you consume for a month?");
   const handleValueChange = (event) => {
@@ -24,6 +24,7 @@ const Appliances = () => {
   };
 
   const handleNext = () => {
+    SetClientSideCo2(ClientSideCo2+electricityUnit*0.5)
     navigate('/display-karma'); 
   };
   
@@ -38,7 +39,7 @@ const Appliances = () => {
             display: "flex",
           }}
         />
-        <div>17.67 ton CO2</div>
+        <div>{ClientSideCo2} ton CO2</div>
       </div>
       <div className="tbox">
         <div className="tround">

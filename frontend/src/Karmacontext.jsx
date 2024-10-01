@@ -3,7 +3,7 @@ export const KarmavehicalContext = createContext();
 const Karmacontext = ({ children }) => {
   const [ClientSideCo2,SetClientSideCo2]=useState(0); 
   const [vehicalID, setVehicalID] = useState(null);
-  const [vehicalCount, setVehicalCount] = useState(null);
+  const [vehicalCount, setVehicalCount] = useState(0);
   const [fuelID, setFuelID] = useState(null);
   const [AvgKilometers, setAvgKilometers] = useState(null);
   const [foodID, setFoodID] = useState(null);
@@ -21,6 +21,7 @@ const Karmacontext = ({ children }) => {
         userOwnSppliances,setUserOwnSppliances,
         electricityUnit,setElectricityUnit,
         karmapoint,setKarmapoint,
+        ClientSideCo2,SetClientSideCo2,
       }}
     >
         {children}
