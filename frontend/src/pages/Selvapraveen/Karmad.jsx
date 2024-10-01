@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "./Karma.css";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Input() {
   const navigate = useNavigate();
@@ -16,12 +17,12 @@ function Input() {
   const [errors, setErrors] = useState({});
 
   const formFields = [
-    { label: "Your Name", key: "name", placeholder: "Your Name", required: true },
-    { label: "Phone Number", key: "phone", placeholder: "Phone Number", required: true },
-    { label: "Email", key: "email", placeholder: "Email", required: true },
-    { label: "Location", key: "location", placeholder: "Location", required: true },
-    { label: "How many Trees you want to plant?", key: "trees", placeholder: "Number of Trees", required: true },
-    { label: "Name to be plant on behalf on?", key: "behalfName", placeholder: "Name on behalf of", required: true },
+    { label: "Your Name", key: "name", placeholder: "Your Name", required: true ,type:"text"},
+    { label: "Phone Number", key: "phone", placeholder: "Phone Number", required: true ,type:"text"},
+    { label: "Email", key: "email", placeholder: "Email", required: true,type:"text" },
+    { label: "Location", key: "location", placeholder: "Location", required: true ,type:"text"},
+    { label: "How many Trees you want to plant?", key: "trees", placeholder: "Number of Trees", required: true,type:"number" },
+    { label: "Name to be plant on behalf on?", key: "behalfName", placeholder: "Name on behalf of", required: true,type:"text" },
   ];
 
   
@@ -36,7 +37,7 @@ function Input() {
     });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit =async () => {
     const newErrors = {};
     let hasErrors = false;
 
@@ -47,12 +48,36 @@ function Input() {
       }
     });
 
+  
+    const postData = {
+      userID: 5,
+      name: formData.name,
+      phonenumber: formData.phone, 
+      email: formData.email,
+      location: formData.location,
+      countOfPlants: formData.trees,
+      beHalfOfName: formData.behalfName,
+     
+    };
+    
+    if (!hasErrors) {
+      try {
+        const response = await axios.post("http://localhost:8081/api/v1/surveyData/survey", postData);
+        console.log(response.data);
+      } catch (error) {
+         console.log('Error', error.message);
+        }
+      }
+      
+    
+
     if (hasErrors) {
       setErrors(newErrors);
     } else {
       navigate("/selva/tick"); 
     }
   };
+
 
   return (
     <div className="S_outline ">
@@ -70,7 +95,7 @@ function Input() {
             </label>
             <input
               className={`Stwo ${errors[field.key] ? "error-border" : ""}`}
-              type="text"
+              type={field.type}
               value={formData[field.key]}
               onChange={(e) => handleInputChange(e, field.key)}
             />

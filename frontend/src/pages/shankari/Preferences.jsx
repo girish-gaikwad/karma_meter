@@ -1,44 +1,63 @@
-import React, { useState } from 'react';
-import bg1 from '../../assets/shankari/bg1.png';
-import veg from '../../assets/shankari/veg.png';
-import nonveg from '../../assets/shankari/nonVeg.png';
-import both from '../../assets/shankari/both.png';
+import React, { useEffect, useState,useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { IoTriangleSharp } from "react-icons/io5";
-import thirdImage from '../../assets/third.png';
-import level from '../../assets/level2.png';
+import progress2 from '../../../public/shankari/progress2.png';
+import { KarmavehicalContext } from "../../Karmacontext";
 
 const Preferences = () => {
-  const navigate = useNavigate();
+  const { foodID, setFoodID } = useContext(KarmavehicalContext);
+  const [preferences, setPreferences] = useState([]);
   const [border, setBorder] = useState(null);
-  const [qus, setQus] = useState("What you normally eat?");
-  const preferences = [
-    { name: "Veg", img: veg, bg: "rgb(228,255,238)", border: "2px solid rgb(114,178,80)" },
-    { name: "Both", img: both, bg: "rgb(255,244,230)", border: "2px solid rgb(235,178,112)" },
-    { name: "Non veg", img: nonveg, bg: "rgb(255,244,243)", border: "2px solid rgb(247,210,206)" },
+  const [qus, setQus] = useState("What do you normally eat?");
+  const navigate = useNavigate();
+
+
+
+  const staticPreferences = [
+    { name: "Veg", bg: "rgb(228,255,238)", border: "2px solid rgb(114,178,80)" },
+    { name: "Both", bg: "rgb(255,244,230)", border: "2px solid rgb(235,178,112)" },
+    { name: "Non veg", bg: "rgb(255,244,243)", border: "2px solid rgb(247,210,206)" },
   ];
 
-  const handlePreferenceClick = (index) => {
-    setSelectedIndex(index);
+  const fetchData = async () => {
+    try {
+      const response = await fetch('http://localhost:8081/api/v1/getdata/foodtype');
+      const data = await response.json();
+      
+      const mergedData = staticPreferences.map(pref => {
+        const backendItem = data.find(item => item.foodcategory === pref.name);
+        return backendItem ? { ...pref, ...backendItem } : pref; // Keep the static item if no match is found
+      });
+      
+      setPreferences(mergedData);
+      console.log(mergedData);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
+  useEffect(() => {
+    fetchData();
+  }, []);
+  const handleCarbonValue = (index,value) => {
+    setBorder(index);
+    setFoodID(value);
+  
+    
+  };
+  console.log(foodID)
+
   return (
-    <div className="tmain" style={{ backgroundImage: `url(${thirdImage})`}}>
+    <div className="tmain">
       <div className="Shead-red">
-        <span
-          style={{
-            paddingRight: "10px",
-            alignItems: "center",
-            display: "flex",
-          }}
-        >
-          <IoTriangleSharp color="red"  />
+        <span style={{ paddingRight: "10px", alignItems: "center", display: "flex" }}>
+          <IoTriangleSharp color="#DF2929" />
         </span>
         <div>17.67 ton CO2</div>
       </div>
       <div className="tbox">
         <div className="tround">
-          <img src={level} style={{backgroundColor:'Transparent'}} />
+          <img src={progress2} style={{ backgroundColor: 'Transparent' }} />
         </div>
         <div className="Sdiv">
           <div className="tqus">{qus}</div>
@@ -46,20 +65,17 @@ const Preferences = () => {
             {preferences.map((item, index) => (
               <div
                 className="titem"
-                onClick={() => setBorder(index)}
-                key={index}
+                onClick={() => handleCarbonValue(index,item.id)} 
+                key={item.id || index}
                 style={{
                   backgroundColor: item.bg,
-                  gridColumn: index == 2 ? "span 2" : "auto",
-                  width: index == 2 ? "41%" : "",
-                  border:
-                    border == index
-                      ? `${item.border}`
-                      : "2px solid transparent",
+                  gridColumn: index === 2 ? "span 2" : "auto",
+                  width: index === 2 ? "41%" : "",
+                  border: border === index ? item.border : "2px solid transparent",
                 }}
               >
-                <img src={item.img} style={{paddingBottom:'10px'}} />
-                <div>{item.name}</div>
+                <img src={item.Image} alt={item.foodcategory} style={{ paddingBottom: '10px' }} />
+                <div>{item.foodcategory}</div>
               </div>
             ))}
           </div>
@@ -67,7 +83,7 @@ const Preferences = () => {
             <button onClick={() => navigate(-1)} className="tbut1">
               Back
             </button>
-            <button onClick={() => navigate('/electricity')} className="tbut2">
+            <button onClick={()=>navigate('/electricity')} className="tbut2">
               Next
             </button>
           </div>

@@ -99,6 +99,10 @@ const postData = async (req, res) => {
       );
 
       return res.status(200).send({
+        vehicleCo2: vehicleCO2+fuelCO2,
+        foodCO2:foodCO2,
+        applianceCo2:appliancecarbon + electricityCO2,
+        karmaScore:totalCo2,
         message: "Karma score updated successfully",
       });
     } else {

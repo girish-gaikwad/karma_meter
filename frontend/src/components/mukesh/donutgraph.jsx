@@ -1,16 +1,20 @@
-import React from "react";
+import React,{useState,useContext} from "react";
 import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement, Tooltip, Legend } from "chart.js";
 import "./donutgraph.css";
 import arrow from "../../assets/arrow.png";
+import { KarmavehicalContext } from "../../Karmacontext";
 Chart.register(ArcElement, Tooltip, Legend);
 
 const CarbonFootprintChart = () => {
+  const { karmapoint} = useContext(KarmavehicalContext);
+  console.log("iN COMPONENT",karmapoint);
+  
   const data = {
     labels: ["Commute", "Food", "Appliances"],
     datasets: [
       {
-        data: [40, 30, 30],
+        data: [karmapoint.vehicleCo2, karmapoint.foodCO2, karmapoint.applianceCo2],
         backgroundColor: ["#F58E27", "#F4646E", "#4AC596"],
         hoverBackgroundColor: ["#FF8B1F", "#FF5E58", "#00C48C"],
         borderWidth: 0,
@@ -40,7 +44,7 @@ const CarbonFootprintChart = () => {
         <Doughnut data={data} options={options} />
 
         <div className="chart-inner-text">
-          <h3 className="carbon-value">18 ton CO₂</h3>
+          <h3 className="carbon-value">{karmapoint.karmaScore} ton CO₂</h3>
         </div>
       </div>
 

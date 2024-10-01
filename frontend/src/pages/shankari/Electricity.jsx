@@ -1,80 +1,86 @@
-import React, { useState } from "react";
-import bg2 from "../../assets/shankari/bg2.png";
+import React, { useState, useEffect,useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import progress3 from "../../assets/level3.png";
 import { IoTriangleSharp } from "react-icons/io5";
-import thirdImage from '../../assets/fourth.png';
+import progress3 from "../../../public/shankari/progress3.png";
 
+import { KarmavehicalContext } from "../../Karmacontext";
 
 const Electricity = () => {
   const navigate = useNavigate();
-  const [selectedIndices, setSelectedIndices] = useState([]);
+  const { userOwnSppliances, setUserOwnSppliances } = useContext(KarmavehicalContext);
+  const [selectedIndices, setSelectedIndices] = useState([]); // Store selected indices
+  const [appliances, setAppliances] = useState([]);
+  const[data,setData] = useState([])
 
-  const Appliances = [
+
+  const Appliance = [
     {
-      name: "Fridge",
+      
       bg: "rgb(228,255,238)",
       border: "2px solid rgb(114,178,80)",
     },
     {
-      name: "AC",
       bg: "rgb(255,244,230)",
       border: "2px solid rgb(235,178,112)",
     },
     {
-      name: "Chimney",
       bg: "rgb(249,245,247)",
       border: "2px solid rgb(247,210,206)",
     },
     {
-      name: "Washing Machine",
       bg: "rgb(230,238,250)",
       border: "2px solid rgb(247,210,206)",
     },
     {
-      name: "Electric vehicles",
       bg: "rgb(252,245,255)",
       border: "2px solid rgb(247,210,206)",
     },
     {
-      name: "Air cooler",
       bg: "rgb(228,251,255)",
       border: "2px solid rgb(247,210,206)",
     },
     {
-      name: "Mixer/ Grinder",
       bg: "rgb(255,244,243)",
       border: "2px solid rgb(247,210,206)",
     },
   ];
 
+  const fetchData = async () => {
+    try {
+      const response = await fetch('http://localhost:8081/api/v1/getdata/appliances');
+      const data = await response.json();
+     setData(data)
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   const handlePreferenceClick = (index) => {
-    setSelectedIndices((prev) => {
+    setUserOwnSppliances((prev) => {
       if (prev.includes(index)) {
-        return prev.filter((i) => i !== index);
+
+        return prev.filter((i) => i !== index); // Remove index if already selected
       } else {
-        return [...prev, index];
+        return [...prev, index]; // Add index if not selected
       }
     });
-  };
 
-  const handleNext = () => {
-    const selectedAppliances = selectedIndices.map((i) => Appliances[i].name);
-    console.log("Selected Appliances:", selectedAppliances);
-    navigate("/appliances");
   };
+  console.log(userOwnSppliances);
+  const handleNext = () => {
+    navigate('/appliances'); 
+  };
+  
 
   return (
-    <div className="tmain" style={{ backgroundImage: `url(${thirdImage})`}}>
+    <div className="tmain">
       <div className="Shead-red">
-        <span
-          style={{
-            paddingRight: "10px",
-            alignItems: "center",
-            display: "flex",
-          }}
-        >
-          <IoTriangleSharp color="red" />
+        <span style={{ paddingRight: "10px", alignItems: "center", display: "flex" }}>
+          <IoTriangleSharp color="#DF2929" />
         </span>
         <div>17.67 ton CO2</div>
       </div>
@@ -82,46 +88,40 @@ const Electricity = () => {
         <div className="tround">
           <img src={progress3} style={{ backgroundColor: "Transparent" }} />
         </div>
-
         <div className="Sdiv">
           <div className="tqus">Select the appliances you use at your home</div>
           <div
             style={{
-              justifyContent:'center',
+              justifyContent: 'center',
               display: "grid",
               gridTemplateColumns: "repeat(3, 1fr)",
               gap: "15px",
             }}
           >
-            {Appliances.map((item, index) => (
+            {data.map((item, index) => (
               <div
-              className="Srav"
+                className="Srav"
                 key={index}
-                onClick={() => handlePreferenceClick(index)}
+                onClick={() => handlePreferenceClick(item.id)}
                 style={{
-                  backgroundColor: item.bg,
-                  border: selectedIndices.includes(index)
-                    ? item.border
-                    : "2px solid transparent",
+                  backgroundColor: Appliance[index].bg,
+                  border: userOwnSppliances.includes(index+1) ? Appliance[index].border : "2px solid transparent",
                   cursor: "pointer",
                   gridColumn: index === 6 ? "2 / span 1" : "auto",
-                  height: index == 6 ? "70px" : "",
+                  height: index === 6 ? "70px" : "",
                 }}
               >
-                <p
-                  style={{
-                    fontSize: "12px",
-                    margin: "0",
-                    wordBreak: "break-word",
-                    fontWeight: "500",
-                  }}
-                >
+                <p style={{
+                  fontSize: "12px",
+                  margin: "0",
+                  wordBreak: "break-word",
+                  fontWeight: "500",
+                }}>
                   {item.name}
                 </p>
               </div>
             ))}
           </div>
-
           <div className="tnext" style={{ justifyContent: "space-between" }}>
             <button className="tbut1" onClick={() => navigate(-1)}>
               Back

@@ -7,21 +7,21 @@ module.exports = {
       {
         foodcategory: 'Veg',
         carbonFootprint: 5,
-        image:"../../assets/shankari/veg.png",
+        image:"/public/shankari/veg.png",
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         foodcategory: 'Both',
         carbonFootprint: 5,
-        image:"../../assets/shankari/both.png",
+        image:"/public/shankari/both.png",
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         foodcategory: 'Non veg',
         carbonFootprint: 5,
-        image:"../../assets/shankari/nonVeg.png",
+        image:"/public/shankari/nonVeg.png",
         createdAt: new Date(),
         updatedAt: new Date()
       }

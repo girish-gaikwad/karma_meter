@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useState,useContext,useEffect } from "react";
 import "./slide1.css";
 import tree from '../../assets/m-tree.png'
 import CarbonFootprintChart from "../../components/mukesh/donutgraph";
 import Greatjob from "../Selvapraveen/Greatjob";
 import Input from "../Selvapraveen/Karmad";
+import { KarmavehicalContext } from "../../Karmacontext";
 function Slide1() {
-
+  const userID = 1
+  const { vehicalID,vehicalCount,fuelID,AvgKilometers,foodID,userOwnSppliances,electricityUnit,karmapoint,setKarmapoint } = useContext(KarmavehicalContext);
+  const [data,setData] = useState(null)
   const [showGreatJob, setShowGreatJob] = useState(false);
   const [hideGreatJob, setHideGreatJob] = useState(false);
   const [showInput, setShowInput] = useState(false);
@@ -13,7 +16,31 @@ function Slide1() {
   const [backgroundClass, setBackgroundClass] = useState("m-main1");
   const [backgroundClass1, setBackgroundClass1] = useState("m-main1-se");
   const [backgroundClass2, setBackgroundClass2] = useState("m-main1-se");
-
+  const fetchData = async () => {
+    try {
+      const response = await fetch('http://localhost:8081/api/v1/karma_meter/calculate', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ userID,
+                              vehicalID,
+                              vehicalCount,
+                              fuelID,
+                              AvgKilometers,
+                              foodID,
+                              userOwnSppliances,
+                              electricityUnit,}),
+      });
+      const data = await response.json();
+      setKarmapoint(data)
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  useEffect(() => {
+    fetchData();
+  },[])
   const handleClick = () => {
     setHideButton(true);  
     setBackgroundClass("secondback");

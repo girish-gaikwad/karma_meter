@@ -1,25 +1,34 @@
-import React, { useState } from 'react';
-import bg3 from '../../assets/shankari/bg3.png';
+import React, { useState,useContext } from 'react';
+import bg3 from '../../../public/shankari/bg3.png';
 import { useNavigate } from 'react-router-dom';
 import { IoTriangleSharp } from "react-icons/io5";
-import progress4 from '../../assets/level4.png';
+import progress4 from '../../../public/shankari/progress4.png';
 import './Appliances.css';
 import Slider from "@mui/material/Slider";
-import thirdImage from '../../assets/fiveth.png';
+import { KarmavehicalContext } from "../../Karmacontext";
+
 const Appliances = () => {
   const navigate = useNavigate();
+  const { electricityUnit, setElectricityUnit } = useContext(KarmavehicalContext);
   const [value, setValue] = useState(100);
   const [qus, setQus] = useState("How much electricity do you consume for a month?");
   const handleValueChange = (event) => {
     setValue(event.target.value);
+    setElectricityUnit(event.target.value)
+    
   };
+  console.log(electricityUnit);
 
   const sliderBackgroundStyle = {
     backgroundColor: `linear-gradient(to right, rgb(29,120,236) ${value / 10}%, #d3d3d3 0%)`
   };
 
+  const handleNext = () => {
+    navigate('/display-karma'); 
+  };
+  
   return (
-    <div className="tmain" style={{ backgroundImage: `url(${thirdImage})`}}>
+    <div className="tmain">
       <div className="Shead-red">
       <IoTriangleSharp
           color="red"
@@ -94,7 +103,7 @@ const Appliances = () => {
             </div>
           </div>
           <div className="tnext">
-            <button className="Sbut"  onClick={() => navigate('/display-karma')}>Calculate carbon footprint</button>
+            <button className="Sbut"  onClick={() => handleNext()}>Calculate carbon footprint</button>
           </div>
         </div>
       </div>
