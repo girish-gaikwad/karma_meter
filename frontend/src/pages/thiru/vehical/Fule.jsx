@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { IoTriangleSharp } from "react-icons/io5";
 
 import image from "../../../assets/second.png";
+import { KarmavehicalContext } from "../../../Karmacontext";
 
 const Fule = () => {
   const navigate = useNavigate();
