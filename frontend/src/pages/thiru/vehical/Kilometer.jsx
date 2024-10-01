@@ -6,7 +6,7 @@ import Slider from "@mui/material/Slider";
 import { KarmavehicalContext } from "../../../Karmacontext";
 const Kilometer = () => {
     const navigate =useNavigate();
-    const { AvgKilometers, setAvgKilometers } = useContext(KarmavehicalContext);
+    const { AvgKilometers, setAvgKilometers,ClientSideCo2,SetClientSideCo2 } = useContext(KarmavehicalContext);
     const [qus,setQus]=useState("How many kilometers you drive per week?")
     const [value, setValue] = useState(AvgKilometers); // Initial value of the slider is 0
   // Update the value state as slider moves
@@ -15,7 +15,10 @@ const Kilometer = () => {
     setAvgKilometers(event.target.value)
   };
   console.log(AvgKilometers);
-  
+  const handlenext = () =>{
+    SetClientSideCo2(ClientSideCo2*AvgKilometers)
+    navigate("/preferences")
+  }
   return (
     <div className="tmain1">
       <div className="Shead-red">
@@ -27,7 +30,7 @@ const Kilometer = () => {
             display: "flex",
           }}
         />
-        <div>17.67 ton CO2</div>
+        <div>{ClientSideCo2} ton CO2</div>
       </div>
       <div className="tbox">
         <div className="tround">
@@ -95,7 +98,7 @@ const Kilometer = () => {
             <button onClick={() => navigate(-1)} className="tbut1">
               Back
             </button>
-            <button onClick={() => navigate("/preferences")} className="tbut2">
+            <button onClick={() => handlenext()} className="tbut2">
               Next
             </button>
           </div>

@@ -5,9 +5,10 @@ import { useNavigate } from "react-router-dom";
 import { IoTriangleSharp } from "react-icons/io5";
 import { KarmavehicalContext } from "../../../Karmacontext";
 const Choosevehical = () => {
-  const { vehicalID, setVehicalID } = useContext(KarmavehicalContext);
+  const { vehicalID, setVehicalID,ClientSideCo2,SetClientSideCo2 } = useContext(KarmavehicalContext);
   const navigate = useNavigate();
   const [data,setData] = useState(null)
+  
   const [qus, setQus] = useState("Choose the vehicles you use for commuting?");
   const [border, setBorder] = useState(null);
   const [list, setList] = useState([
@@ -21,9 +22,10 @@ const Choosevehical = () => {
   ]);
   const handleclick = (index,item) =>{
     setVehicalID(item.id)
+    SetClientSideCo2(item.carbonFootprint);
+    
     setBorder(index)
   }
-console.log(vehicalID);
 
   const fetchData = async () => {
     try {
@@ -54,7 +56,7 @@ console.log(vehicalID);
         >
           <IoTriangleSharp color="red"  />
         </span>
-        <div>17.67 ton CO2</div>
+        <div>{ClientSideCo2} ton CO2</div>
       </div>
       <div className="tbox">
         <div className="tround" >

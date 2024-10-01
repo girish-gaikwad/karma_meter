@@ -6,13 +6,18 @@ import Slider from "@mui/material/Slider";
 import { IoTriangleSharp } from "react-icons/io5";
 const Noofvehicel = () => {
   const navigate = useNavigate();
-  const { vehicalCount, setVehicalCount } = useContext(KarmavehicalContext);
+  const { vehicalCount, setVehicalCount,ClientSideCo2,SetClientSideCo2 } = useContext(KarmavehicalContext);
   const [qus, setQus] = useState("How many vehicles do you own?");
   const [value, setValue] = useState(vehicalCount); 
   const handleValueChange = (event) => {
     setValue(event.target.value);
     setVehicalCount(event.target.value)
+    
   };
+  const handlenext = () =>{
+    SetClientSideCo2(ClientSideCo2*vehicalCount)
+    navigate("/vehical/fuel")
+  }
   console.log(vehicalCount);
   
   return (
@@ -26,7 +31,7 @@ const Noofvehicel = () => {
             display: "flex",
           }}
         />
-        <div>17.67 ton CO2</div>
+        <div>{ClientSideCo2} ton CO2</div>
       </div>
       <div className="tbox">
         <div className="tround">
@@ -98,7 +103,7 @@ const Noofvehicel = () => {
             <button onClick={() => navigate(-1)} className="tbut1">
               Back
             </button>
-            <button onClick={() => navigate("/vehical/fuel")} className="tbut2">
+            <button onClick={() => handlenext()} className="tbut2">
               Next
             </button>
           </div>

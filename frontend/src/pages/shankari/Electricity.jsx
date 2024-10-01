@@ -7,7 +7,8 @@ import { KarmavehicalContext } from "../../Karmacontext";
 
 const Electricity = () => {
   const navigate = useNavigate();
-  const { userOwnSppliances, setUserOwnSppliances } = useContext(KarmavehicalContext);
+  const { userOwnSppliances, setUserOwnSppliances,ClientSideCo2,SetClientSideCo2  } = useContext(KarmavehicalContext);
+  const [carbon,setCarbon] = useState(null)
   const [selectedIndices, setSelectedIndices] = useState([]); // Store selected indices
   const [appliances, setAppliances] = useState([]);
   const[data,setData] = useState([])
@@ -61,17 +62,18 @@ const Electricity = () => {
 
   const handlePreferenceClick = (index) => {
     setUserOwnSppliances((prev) => {
-      if (prev.includes(index)) {
-
-        return prev.filter((i) => i !== index); // Remove index if already selected
+      if (prev.includes(index.id)) {
+        setCarbon(carbon-index.carbonFootprint)
+        return prev.filter((i) => i !== index.id); // Remove index if already selected
       } else {
-        return [...prev, index]; // Add index if not selected
+        setCarbon(carbon+index.carbonFootprint)
+        return [...prev, index.id]; // Add index if not selected
       }
     });
 
   };
-  console.log(userOwnSppliances);
   const handleNext = () => {
+    SetClientSideCo2(ClientSideCo2+carbon)
     navigate('/appliances'); 
   };
   
@@ -82,7 +84,7 @@ const Electricity = () => {
         <span style={{ paddingRight: "10px", alignItems: "center", display: "flex" }}>
           <IoTriangleSharp color="#DF2929" />
         </span>
-        <div>17.67 ton CO2</div>
+        <div>{ClientSideCo2} ton CO2</div>
       </div>
       <div className="tbox">
         <div className="tround">
@@ -102,7 +104,7 @@ const Electricity = () => {
               <div
                 className="Srav"
                 key={index}
-                onClick={() => handlePreferenceClick(item.id)}
+                onClick={() => handlePreferenceClick(item)}
                 style={{
                   backgroundColor: Appliance[index].bg,
                   border: userOwnSppliances.includes(index+1) ? Appliance[index].border : "2px solid transparent",

@@ -9,8 +9,9 @@ import { KarmavehicalContext } from "../../../Karmacontext";
 
 const Fule = () => {
   const navigate = useNavigate();
-  const { fuelID, setFuelID } = useContext(KarmavehicalContext);
+  const { fuelID, setFuelID,vehicalCount,ClientSideCo2,SetClientSideCo2 } = useContext(KarmavehicalContext);
   const [data,setData] = useState(null)
+  const [carbon,setCarbon] = useState(null)
   const [qus, setQus] = useState("What type of fuel do you use?");
   const [border, setBorder] = useState(null);
   const [list, setList] = useState([
@@ -26,11 +27,15 @@ const Fule = () => {
 
   const handleclick = (index,item) =>{
     setFuelID(item.id)
+    setCarbon(item.carbonFootprint);
+    
     setBorder(index)
   }
-  console.log(fuelID);
   
-
+  const handlenext = () =>{
+    SetClientSideCo2(ClientSideCo2+(carbon*vehicalCount))
+    navigate("/vehical/kilometer")
+  }
   const fetchData = async () => {
     try {
       const response = await fetch('http://localhost:8081/api/v1/getdata/fueltype');
@@ -60,7 +65,7 @@ const Fule = () => {
           >
             <IoTriangleSharp color="red"  />
           </span>
-          <div>17.67 ton CO2</div>
+          <div>{ClientSideCo2} ton CO2</div>
       </div>
       <div className="tbox">
         <div className="tround">
@@ -92,7 +97,7 @@ const Fule = () => {
             <button onClick={() => navigate(-1)} className="tbut1">
               Back
             </button>
-            <button onClick={() => navigate("/vehical/kilometer")} className="tbut2">
+            <button onClick={() => handlenext()} className="tbut2">
               Next
             </button>
           </div>

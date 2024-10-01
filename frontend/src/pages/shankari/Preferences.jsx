@@ -5,7 +5,8 @@ import progress2 from '../../../public/shankari/progress2.png';
 import { KarmavehicalContext } from "../../Karmacontext";
 
 const Preferences = () => {
-  const { foodID, setFoodID } = useContext(KarmavehicalContext);
+  const { foodID, setFoodID,ClientSideCo2,SetClientSideCo2 } = useContext(KarmavehicalContext);
+  const [carbon,setCarbon] = useState(0)
   const [preferences, setPreferences] = useState([]);
   const [border, setBorder] = useState(null);
   const [qus, setQus] = useState("What do you normally eat?");
@@ -41,19 +42,21 @@ const Preferences = () => {
   }, []);
   const handleCarbonValue = (index,value) => {
     setBorder(index);
-    setFoodID(value);
-  
+    setFoodID(value.id);
+    setCarbon(value.carbonFootprint)
     
   };
-  console.log(foodID)
-
+  const handlenext = () =>{
+    SetClientSideCo2(ClientSideCo2+carbon)
+    navigate('/electricity')
+  }
   return (
     <div className="tmain">
       <div className="Shead-red">
         <span style={{ paddingRight: "10px", alignItems: "center", display: "flex" }}>
           <IoTriangleSharp color="#DF2929" />
         </span>
-        <div>17.67 ton CO2</div>
+        <div>{ClientSideCo2} ton CO2</div>
       </div>
       <div className="tbox">
         <div className="tround">
@@ -65,7 +68,7 @@ const Preferences = () => {
             {preferences.map((item, index) => (
               <div
                 className="titem"
-                onClick={() => handleCarbonValue(index,item.id)} 
+                onClick={() => handleCarbonValue(index,item)} 
                 key={item.id || index}
                 style={{
                   backgroundColor: item.bg,
@@ -83,7 +86,7 @@ const Preferences = () => {
             <button onClick={() => navigate(-1)} className="tbut1">
               Back
             </button>
-            <button onClick={()=>navigate('/electricity')} className="tbut2">
+            <button onClick={()=>handlenext()} className="tbut2">
               Next
             </button>
           </div>
