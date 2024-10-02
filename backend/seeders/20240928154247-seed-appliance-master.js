@@ -13,40 +13,40 @@ module.exports = {
      },{
       id: 2,
       name: 'Ac',
-      carbonFootprint: 5,
+      carbonFootprint: 7,
       createdAt: new Date(),
       updatedAt: new Date()
      },{
       id: 3,
       name: 'Chimney',
-      carbonFootprint: 5,
+      carbonFootprint: 10,
       createdAt: new Date(),
       updatedAt: new Date()
      },{
       id: 4,
       name: 'Washing Machine',
-      carbonFootprint: 5,
+      carbonFootprint: 6,
       createdAt: new Date(),
       updatedAt: new Date()
      },
      {
       id: 5,
       name: 'Electric vehicles',
-      carbonFootprint: 10,
+      carbonFootprint: 4,
       createdAt: new Date(),
       updatedAt: new Date()
      },
      {
       id: 6,
       name: 'Air cooler',
-      carbonFootprint: 10,
+      carbonFootprint: 11,
       createdAt: new Date(),
       updatedAt: new Date()
      },
      {
       id: 7,
       name: 'Mixer/ Grinder',
-      carbonFootprint: 10,
+      carbonFootprint: 7,
       createdAt: new Date(),
       updatedAt: new Date()
      }

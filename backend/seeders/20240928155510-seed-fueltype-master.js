@@ -6,14 +6,14 @@ module.exports = {
     await queryInterface.bulkInsert('fueltypeMaster', [
       {
         fuelcategory: 'Petrol',
-        carbonFootprint: 50,
+        carbonFootprint: 40,
         image:"/public/thiru/Fuel Pump.png",
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         fuelcategory: 'Electric',
-        carbonFootprint: 25,
+        carbonFootprint: 7,
         image:"/public/thiru/icons8-electric-plug.svg",
         createdAt: new Date(),
         updatedAt: new Date()

@@ -7,20 +7,20 @@ module.exports = {
       {
         vehicalCategory: 'Bicycle/Walk',
         image:"/public/thiru/Bicycle.png",
-        carbonFootprint: 5,
+        carbonFootprint: 20,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         vehicalCategory: 'Two wheeler',
         image:"/public/thiru/Motor Scooter@2x.png",
-        carbonFootprint: 50,
+        carbonFootprint: 60,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         vehicalCategory: 'car',
-        carbonFootprint: 100,
+        carbonFootprint: 88,
         image:"/public/thiru/Automobile.png",
         createdAt: new Date(),
         updatedAt: new Date()
