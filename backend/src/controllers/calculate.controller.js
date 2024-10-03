@@ -75,6 +75,10 @@ const postData = async (req, res) => {
     const foodCO2 = food.carbonFootprint;
     const totalCo2 = vehicleCO2 + fuelCO2 + foodCO2 + appliancecarbon + electricityCO2;
 
+    // Calculate saplings required to offset the CO2 emissions
+    const co2AbsorbedPerSapling = 22; // kg CO2 per year per sapling
+    const saplingsNeeded = Math.ceil(totalCo2 / co2AbsorbedPerSapling);
+
     // Check if user already exists in transactions
     const userExist = await db.transcations.findOne({
       where: { userID: userID },
@@ -99,10 +103,11 @@ const postData = async (req, res) => {
       );
 
       return res.status(200).send({
-        vehicleCo2: vehicleCO2+fuelCO2,
-        foodCO2:foodCO2,
-        applianceCo2:appliancecarbon + electricityCO2,
-        karmaScore:totalCo2,
+        vehicleCO2: vehicleCO2 + fuelCO2,
+        foodCO2: foodCO2,
+        applianceCO2: appliancecarbon + electricityCO2,
+        karmaScore: totalCo2,
+        saplingsNeeded: saplingsNeeded,
         message: "Karma score updated successfully",
       });
     } else {
@@ -119,6 +124,7 @@ const postData = async (req, res) => {
 
       return res.status(200).send({
         message: "Karma score created successfully",
+        saplingsNeeded: saplingsNeeded,
       });
     }
   } catch (error) {
@@ -130,20 +136,3 @@ const postData = async (req, res) => {
 };
 
 module.exports = { postData };
-
-
-
-// url = http://localhost:8081/api/v1/karma_meter/calculate
-
-// json format for calculate controller
-
-// {
-//   "userID":1,
-//   "vehicalID":3,
-//   "vehicalCount":10,
-//   "fuelID":1,
-//   "AvgKilometers":100,
-//   "foodID":1,
-//   "userOwnSppliances":[1,2,3],
-//   "electricityUnit":600
-// }
