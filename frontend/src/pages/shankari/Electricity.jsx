@@ -1,8 +1,8 @@
 import React, { useState, useEffect,useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { IoTriangleSharp } from "react-icons/io5";
-import progress3 from "../../../public/shankari/progress3.png";
-
+import progress3 from "../../assets/level3.png";
+import thirdImage from '../../assets/fourth.png';
 import { KarmavehicalContext } from "../../Karmacontext";
 
 const Electricity = () => {
@@ -79,7 +79,7 @@ const Electricity = () => {
   
 
   return (
-    <div className="tmain">
+    <div className="tmain" style={{ backgroundImage: `url(${thirdImage})`}}>
       <div className="Shead-red">
         <span style={{ paddingRight: "10px", alignItems: "center", display: "flex" }}>
           <IoTriangleSharp color="#DF2929" />

@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { IoTriangleSharp } from "react-icons/io5";
 import progress2 from '../../../public/shankari/progress2.png';
 import { KarmavehicalContext } from "../../Karmacontext";
-
+import level from '../../assets/level2.png';
+import thirdImage from '../../assets/third.png';
 const Preferences = () => {
   const { foodID, setFoodID,ClientSideCo2,SetClientSideCo2 } = useContext(KarmavehicalContext);
   const [carbon,setCarbon] = useState(0)
@@ -51,7 +52,7 @@ const Preferences = () => {
     navigate('/electricity')
   }
   return (
-    <div className="tmain">
+    <div className="tmain" style={{ backgroundImage: `url(${thirdImage})`}}>
       <div className="Shead-red">
         <span style={{ paddingRight: "10px", alignItems: "center", display: "flex" }}>
           <IoTriangleSharp color="#DF2929" />

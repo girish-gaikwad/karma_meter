@@ -8,7 +8,7 @@ const Choosevehical = () => {
   const { vehicalID, setVehicalID,ClientSideCo2,SetClientSideCo2 } = useContext(KarmavehicalContext);
   const navigate = useNavigate();
   const [data,setData] = useState(null)
-  
+  const [select,setSelect] = useState(false)
   const [qus, setQus] = useState("Choose the vehicles you use for commuting?");
   const [border, setBorder] = useState(null);
   const [list, setList] = useState([
@@ -23,7 +23,7 @@ const Choosevehical = () => {
   const handleclick = (index,item) =>{
     setVehicalID(item.id)
     SetClientSideCo2(item.carbonFootprint);
-    
+    setSelect(true)
     setBorder(index)
   }
 
@@ -39,6 +39,19 @@ const Choosevehical = () => {
   useEffect(() => {
     fetchData();
   },[])
+
+  const handlenext = () =>{
+    console.log("keee");
+    
+    if (select) {
+      navigate("/vehical/noofvehicel")
+    }
+    else{
+      alert("Please enter any field")
+    }
+
+    
+  }
   if (!data) {
     return <div>Loding....</div>
   }
@@ -73,7 +86,7 @@ const Choosevehical = () => {
               style={{
                 backgroundColor: list[index].baground,
                 gridColumn: index == 2 ? "span 2" : "auto",
-                width: index == 2 ? "41%" : "",
+                width: index == 2 ? "42%" : "",
                 border:
                   border == index
                     ? `2px solid ${list[index].border}`
@@ -86,7 +99,7 @@ const Choosevehical = () => {
           ))}
         </div>
         <div className="tnext">
-          <button className="Sbut" onClick={() => navigate("/vehical/noofvehicel")}>Next</button>
+          <button className="Sbut" onClick={handlenext}>Next</button>
         </div>
         </div>
       </div>

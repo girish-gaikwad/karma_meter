@@ -6,6 +6,32 @@ import Greatjob from "../Selvapraveen/Greatjob";
 import Input from "../Selvapraveen/Karmad";
 import { KarmavehicalContext } from "../../Karmacontext";
 function Slide1() {
+  // initialize all the same state as an one state
+
+  // const [state,setState]=useState({
+  //   showGreatJob:false,
+  //   hideGreatJob:false,
+  //   showInput:false
+  //     })
+    
+    
+  //   // write a function to update the state  
+    
+    
+  //    const updateState=(key,vsl)=>{
+  //       setState({...state,[key]:vsl})
+  //     }
+    
+  //     setState({
+  //       ...state,
+  //       showGreatJob:false,
+  //   hideGreatJob:false,
+  //   showInput:false
+  //     })
+    
+  //   //function call
+    
+  //   updateState("showGreatJob",true)
   const userID = 1
   const { vehicalID,vehicalCount,fuelID,AvgKilometers,foodID,userOwnSppliances,electricityUnit,karmapoint,setKarmapoint,ClientSideCo2 } = useContext(KarmavehicalContext);
   const [data,setData] = useState(null)
@@ -78,7 +104,7 @@ function Slide1() {
           </div>
           <div className="offset-text">
             <p>Offset your excess carbon footprint by</p>
-            <h2>Planting 15 Saplings</h2>
+            <h2>Planting {karmapoint.saplingsNeeded} Saplings</h2>
           </div>
           <button onClick={handleClick} className="offset-button">Calculate & offset</button>
         </div>
