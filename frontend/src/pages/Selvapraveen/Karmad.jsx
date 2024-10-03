@@ -19,7 +19,7 @@ function Input() {
   const formFields = [
     { label: "Your Name", key: "name", placeholder: "Your Name", required: true ,type:"text"},
     { label: "Phone Number", key: "phone", placeholder: "Phone Number", required: true ,type:"text"},
-    { label: "Email", key: "email", placeholder: "Email", required: true,type:"text" },
+    { label: "Email", key: "email", placeholder: "Email", required: true,type:"email" },
     { label: "Location", key: "location", placeholder: "Location", required: true ,type:"text"},
     { label: "How many Trees you want to plant?", key: "trees", placeholder: "Number of Trees", required: true,type:"number" },
     { label: "Name to be plant on behalf on?", key: "behalfName", placeholder: "Name on behalf of", required: true,type:"text" },

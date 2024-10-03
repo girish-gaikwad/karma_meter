@@ -14,7 +14,7 @@ const CarbonFootprintChart = () => {
     labels: ["Commute", "Food", "Appliances"],
     datasets: [
       {
-        data: [karmapoint.vehicleCo2, karmapoint.foodCO2, karmapoint.applianceCo2],
+        data: [karmapoint.vehicleCO2, karmapoint.foodCO2, karmapoint.applianceCO2],
         backgroundColor: ["#F58E27", "#F4646E", "#4AC596"],
         hoverBackgroundColor: ["#FF8B1F", "#FF5E58", "#00C48C"],
         borderWidth: 0,
